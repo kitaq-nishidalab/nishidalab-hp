@@ -1,423 +1,658 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Antique&display=swap');
+/* フォントのインポート */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Antique&display=swap");
+/* 全体のフォントスタイル設定 */
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
 }
+/* 特定のフォントスタイルを定義 */
 .pop {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; /* Poppinsフォント */
 }
 .times-new-roman {
-  font-family: "Times New Roman", serif;
+  font-family: "Times New Roman", serif; /* Times New Romanフォント */
 }
+/* コンテナスタイル */
 .container {
-  width: 90%;
-  max-width: 1120px;
-  /* background-color: green; */
-  margin: 0 auto;
-  position: relative;
+  width: 90%; /* 全体幅の90%を使用 */
+  max-width: 1120px; /* 最大幅1120px */
+  /* background-color: green; コメントアウトされた背景色 */
+  margin: 0 auto; /* 水平中央揃え */
+  position: relative; /* 相対位置を指定 */
 }
+/* Flexboxの基本設定 */
 .flex {
-  display: flex; /* Flexboxを有効化し、要素を横方向（またはflex-direction指定に応じた方向）に並べる */
-  justify-content: space-between; /* 子要素の間隔を均等にし、最初と最後の子要素をコンテナの端に揃える */
-  flex-wrap: wrap; /* 子要素がコンテナの幅に収まらない場合、自動的に次の行に折り返す */
-  align-items: center; /* 子要素の縦方向の位置を中央に揃える（交差軸方向で揃える） */
+  display: flex; /* Flexboxを有効化 */
+  justify-content: space-between; /* 子要素を均等に配置 */
+  flex-wrap: wrap; /* 子要素が幅を超える場合折り返し */
+  align-items: center; /* 子要素を縦方向中央揃え */
 }
+/* スマートフォン向けスタイル */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column; /* 縦並びに変更 */
+    align-items: center; /* 子要素を中央揃え */
+  }
+  .container {
+    width: 95%; /* コンテナ幅を縮小 */
+    max-width: 767px; /* 最大幅を767pxに */
+    /* background-color: green; コメントアウトされた背景色 */
+    margin: 0 auto; /* 水平中央揃え */
+    position: relative; /* 相対位置を指定 */
+  }
+  .header_menu li {
+    margin-left: 20px; /* メニュー間隔を調整 */
+  }
+  img {
+    max-width: 100%; /* 画像が画面幅を超えないよう調整 */
+    height: auto; /* アスペクト比を維持 */
+  }
+  .header-bottom {
+    display: none; /* ヘッダーのボトムを非表示 */
+  }
+  .drawer {
+    display: block; /* SPメニューを表示 */
+  }
+}
+/* PC向けスタイル */
+@media (min-width: 769px) {
+  .drawer {
+    display: none; /* ドロワーメニューを非表示 */
+  }
+}
+
 /* -------------------------------- */
 /* ------body------ */
+/* ページ全体のスタイル */
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+  margin: 0; /* ページ余白を削除 */
+  font-family: "Arial", sans-serif; /* Arialフォントを使用 */
+  font-size: calc(16px + 0.5vw); /* 画面幅に応じたフォントサイズ */
 }
-/* ------Header------ */
+
+/* ------ Header 全体のスタイル ------ */
+/* ヘッダー全体の幅と中央揃え */
 header {
-  width: 95%;
-  margin: 0 auto;
+  width: 95%; /* ヘッダー全体の幅を指定 */
+  margin: 0 auto; /* 中央揃え */
 }
-/* header-top */
-.header-top {   
-  background-color: white;
-  padding: 10px 0;
+/* ヘッダー上部の背景色と余白 */
+.header-top {
+  background-color: white; /* 背景色を白に設定 */
+  padding: 10px 0; /* 上下の余白を設定 */
 }
-/* header-bottom*/
+/* ヘッダー下部の背景色と配置 */
 .header-bottom {
-  background-color: white;
-  padding: 15px 0;
-  text-align: center;
+  background-color: white; /* 背景色を白に設定 */
+  padding: 15px 0; /* 上下の余白を設定 */
+  text-align: center; /* テキスト中央揃え */
 }
-/* ---------------- */
-/* Labo Logo*/
+
+/* ------ スマホ向けドロワーメニュー設定 ------ */
+/* ドロワーメニューの基本スタイル */
+@media screen and (max-width: 768px) {
+  .drawer {
+    width: 55px; /* ドロワーボタンの幅 */
+    height: 70px; /* ドロワーボタンの高さ */
+    position: fixed; /* 固定表示 */
+    top: 19px; /* 上端からの距離 */
+    right: 12px; /* 右端からの距離 */
+    z-index: 200; /* 他要素より前面に表示 */
+    display: block; /* スマホでのみ表示 */
+  }
+}
+/* チェックボックスのスタイル */
+input[type="checkbox"] {
+  box-sizing: border-box; /* ボックスサイズを設定 */
+  padding: 0; /* 内側余白を削除 */
+}
+input[type="checkbox" i] {
+  background-color: initial; /* 背景を初期値に */
+  cursor: default; /* 通常のカーソル */
+  appearance: auto; /* ブラウザデフォルトの見た目 */
+  margin: 3px 3px 3px 4px; /* 外側余白を指定 */
+  padding: initial; /* 初期値 */
+  border: initial; /* 初期値 */
+}
+/* チェックボックス用のリセット */
+input {
+  overflow: visible; /* 内容のオーバーフローを許可 */
+  margin: 0; /* 外側余白をリセット */
+  font-family: inherit; /* 親要素のフォントを継承 */
+  font-size: inherit; /* 親要素のサイズを継承 */
+  line-height: inherit; /* 親要素の行間を継承 */
+}
+/* ドロワーボタンのスタイル */
+.drawer-open {
+  display: flex; /* フレックスボックスで配置 */
+  height: 40px; /* 高さを指定 */
+  width: 60px; /* 幅を指定 */
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 縦方向中央揃え */
+  position: relative; /* 相対位置指定 */
+  z-index: 100; /* 前面に表示 */
+  cursor: pointer; /* クリック可能なカーソル */
+}
+/* ドロワーメニューのコンテンツ */
+.drawer-content {
+  color: #ffff; /* テキスト色を白に設定 */
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 縦方向中央揃え */
+  font-size: 32px; /* フォントサイズ */
+  width: 100%; /* 幅を全体に設定 */
+  height: 100%; /* 高さを全体に設定 */
+  position: fixed; /* 固定表示 */
+  top: 0; /* 上端から配置 */
+  left: 100%; /* 初期位置を画面外に配置 */
+  z-index: 99; /* 他要素より後ろに設定 */
+  background: #212529; /* 背景色を暗めに設定 */
+  transition: 0.5s; /* アニメーション効果 */
+  opacity: 0.9; /* 半透明 */
+}
+/* チェック状態の切り替えによるドロワー表示 */
+#drawer-check:checked ~ .drawer-content {
+  left: 0; /* メニューを画面内に表示 */
+  transition: 0.5s ease-in-out; /* アニメーションを適用 */
+}
+/* ドロワーボタンのスパンスタイル */
+.drawer-open span {
+  display: block; /* ブロック要素に設定 */
+  width: 30px; /* 幅 */
+  height: 3px; /* 高さ */
+  background-color: black; /* 色 */
+  position: relative; /* 相対位置指定 */
+}
+/* ドロワーボタンのバーを上下に配置 */
+.drawer-open span::before,
+.drawer-open span::after {
+  content: ""; /* 空の内容 */
+  display: block; /* ブロック要素に設定 */
+  width: 30px; /* 幅 */
+  height: 3px; /* 高さ */
+  background-color: black; /* 色 */
+  position: absolute; /* 絶対位置指定 */
+}
+.drawer-open span::before {
+  top: -10px; /* 上のバーを上に配置 */
+}
+.drawer-open span::after {
+  top: 10px; /* 下のバーを下に配置 */
+}
+.drawer-hidden {
+  display: none; /*チェックボックスの非表示 */
+}
+
+/* ------ ロゴ部分のスタイル ------ */
+/* 研究室ロゴ */
 .logo {
-  font-family: "Times New Roman", serif;
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-family: "Times New Roman", serif; /* フォント設定 */
+  font-size: 32px; /* フォントサイズ */
+  font-weight: 500; /* 太さ */
+  letter-spacing: -0.04em; /* 文字間隔調整 */
 }
+/* ロゴ画像 */
 .logo-image {
-  height: 60px; /* ロゴの高さを調整 */
-  margin-right: 18px; /* 画像とテキストの間に余白を追加 */
+  height: 60px; /* 高さを指定 */
+  margin-right: 18px; /* 画像と文字の間に余白 */
 }
+/* ロゴ下のテキスト */
 .logo p {
-  color: rgb(236, 186, 7);
-  font-size: 18px;
+  color: rgb(236, 186, 7); /* テキスト色 */
+  font-size: 18px; /* フォントサイズ */
 }
-/* .logo span {
-  color: rgb(236, 186, 7);
-} */
-/* ---------------- */
-/* ---------------- */
-/* University Logo*/
+/* 大学ロゴ */
 .logo2 {
-  font-size: 16px;
-  font-weight: 100;
-  letter-spacing: -0.04em;
+  font-size: 16px; /* フォントサイズ */
+  font-weight: 100; /* 太さ */
+  letter-spacing: -0.04em; /* 文字間隔調整 */
 }
 .logo2-image {
-  height: 32px; /* ロゴの高さを調整 */
-  margin-right: 10px; /* 画像とテキストの間に余白を追加 */
+  height: 32px; /* 高さを指定 */
+  margin-right: 10px; /* 画像と文字の間に余白 */
 }
 .logo2 p {
-  font-size: 10px;
+  font-size: 10px; /* フォントサイズ */
 }
-/* ---------------- */
+
+/* ------ メニューリンクのスタイル ------ */
 .header_menu li {
-  margin-left: 60px;
+  margin-left: 60px; /* メニュー間の余白 */
 }
-.header_menu li a { /* リンクのホバーエフェクト */
-  font-size: 18px;
-  position: relative;
-  color: #333; /* 通常時の色 */
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s; /* アニメーションの設定 */
+/* リンクのホバーエフェクト */
+.header_menu li a {
+  font-size: 18px; /* フォントサイズ */
+  position: relative; /* アニメーション用の相対位置指定 */
+  color: #333; /* 通常時の文字色 */
+  text-decoration: none; /* 下線を削除 */
+  transition: color 0.3s, transform 0.3s; /* ホバー時のエフェクト */
 }
+/* ホバー時の効果 */
 .header_menu li a:hover {
   color: rgb(46, 180, 1); /* ホバー時の色 */
-  transform: scale(1.1); /* ホバー時に少し拡大 */
+  transform: scale(1.1); /* ホバー時の拡大 */
 }
-.header_menu li a::after { /* 下線のアニメーション */
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgb(46, 180, 1);
+/* ホバー時の下線アニメーション */
+.header_menu li a::after {
+  content: ""; /* 空の擬似要素 */
+  position: absolute; /* 下線を絶対配置 */
+  bottom: -5px; /* テキストの下に配置 */
+  left: 0; /* 左端に配置 */
+  width: 100%; /* テキスト幅いっぱいに設定 */
+  height: 2px; /* 下線の高さ */
+  background: rgb(46, 180, 1); /* 下線の色 */
   transform: scaleX(0); /* 初期状態で非表示 */
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  transform-origin: left; /* アニメーションの開始点 */
+  transition: transform 0.3s ease; /* アニメーション効果 */
 }
 .header_menu li a:hover::after {
-  transform: scaleX(1); /* ホバー時に表示 */
+  transform: scaleX(1); /* ホバー時に下線を表示 */
 }
-/* ------Main------ */
-/* ------------- */
-/* Hero */
-/* ------------- */
-#hero {
-  background-image: url(../images/lab.jpg);
-  background-position: top;
-  background-size: cover;
-  width: 100vw;
-  height: 540px;
-  /* border-radius: 30px; */
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-bottom: 70px;
-  overflow: hidden;
-}
-#hero::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.2;
-  z-index: 1;
-}
-.hero_inner {
-  z-index: 2;
-  color: #ffff;
-  /* background-color: green; */
-  width: 100%;
-  text-align: center;
-}
-.hero_inner p {
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-.hero_inner h1 {
-  font-size: 54px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-/* ---------------- */
-/* Introduction */
-/* ---------------- */
-#introduction {
-  margin-bottom: 20px;
-}
-.title-intro {
-  font-family: "Times New Roman", serif;
-  font-size: 46px;
-  font-weight: 500;
-  color: #1c1f5f;
-  margin-bottom: 30px;
-  text-align: center;
-}
-#introduction h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-.column-48 {
-  width: 50%;
-}
-.text {
-  font-family: "Times New Roman", serif; 
-  font-size: 18px;       /* フォントサイズを16pxに設定 */
-  line-height: 1.8;      /* 行間をフォントサイズの1.8倍に設定 */
-  margin-bottom: 10px;   /* 各段落の下に余白を追加 */
-}
-.text-keyword {
-  font-family: "Times New Roman", serif;
-  color: #1c1f5f; 
-  font-size: 18px;       /* フォントサイズを16pxに設定 */
-  line-height: 1.8;      /* 行間をフォントサイズの1.8倍に設定 */
-  text-align: center;
-  margin-bottom: 10px;   /* 各段落の下に余白を追加 */
-}
-.keyword-box {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  background: linear-gradient(90deg, #ddf8fd, #dfe7fd); /* 柔らかなグラデーション */
-  border-radius: 20px; /* 丸みを加える */
-  color: #555;
-  font-size: 0.9rem;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影を付ける */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-/* .heading {
-  font-family: "Dancing Script", cursive;
-  font-size: 75px;
-  font-weight: 700;
-  color: #80BA4A;
-  opacity: 0.1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateY(-30%);
-  z-index: -1;
-} */
 
-/* ---------- */
-/* News */
-/* ---------- */
+/* ------ Mainセクション ------ */
+/* Heroセクション（メインビジュアル） */
+#hero {
+  background-image: url(../images/lab.jpg); /* 背景画像を設定 */
+  background-position: top; /* 背景画像の配置位置 */
+  background-size: cover; /* 背景画像を要素全体に拡大縮小して表示 */
+  width: 100vw; /* 要素の幅を画面幅全体に設定 */
+  height: 540px; /* 高さを固定 */
+  /* border-radius: 30px; コメントアウト：角を丸くする設定 */
+  position: relative; /* 子要素を相対配置で配置可能に */
+  display: flex; /* Flexboxを使用して子要素を配置 */
+  align-items: center; /* 子要素を縦方向の中央に配置 */
+  margin-bottom: 70px; /* セクション間の余白 */
+  overflow: hidden; /* コンテンツがはみ出さないように隠す */
+}
+/* Heroセクションに半透明のオーバーレイを追加 */
+#hero::before {
+  content: ""; /* 空の擬似要素を生成 */
+  width: 100%; /* 要素全体をカバーする幅 */
+  height: 100%; /* 要素全体をカバーする高さ */
+  background-color: #000; /* 背景色を黒に設定 */
+  position: absolute; /* 親要素に対して絶対配置 */
+  top: 0; /* 上端から配置 */
+  left: 0; /* 左端から配置 */
+  opacity: 0.2; /* 半透明に設定 */
+  z-index: 1; /* Heroのテキストより後ろに配置 */
+}
+/* Hero内のテキストコンテナ */
+.hero_inner {
+  z-index: 2; /* Heroの背景より前に表示 */
+  color: #ffff; /* テキストの色を白に設定 */
+  /* background-color: green; コメントアウト：背景色を緑にする設定 */
+  width: 100%; /* コンテナの幅を全体に設定 */
+  text-align: center; /* テキストを中央揃え */
+}
+/* Heroセクション内のキャッチコピー（サブテキスト） */
+.hero_inner p {
+  font-size: 32px; /* フォントサイズを指定 */
+  font-weight: 500; /* フォントの太さを中程度に */
+  margin-bottom: 16px; /* 下に余白を追加 */
+}
+/* Heroセクション内のメイン見出し */
+.hero_inner h1 {
+  font-size: 54px; /* 見出しのフォントサイズを指定 */
+  font-weight: 700; /* フォントを太字に */
+  margin-bottom: 30px; /* 下に余白を追加 */
+}
+@media (max-width: 768px) {
+  #hero .hero_inner p {
+    font-size: 16px; /* フォントサイズを小さく */
+    font-weight: 500; /* フォントの太さ */
+    margin-bottom: 16px; /* 下余白を追加 */
+  }
+  #hero .hero_inner h1 {
+    font-size: 22px; /* 見出しのフォントサイズ */
+    font-weight: 700; /* フォントを太く */
+    margin-bottom: 30px; /* 下余白を追加 */
+  }
+  #hero {
+    height: auto; /* 高さを自動調整 */
+    padding: 90px 0; /* 上下の余白を追加 */
+  }
+}
+
+/* ------Introductionセクション ------ */
+/* Introduction全体の設定 */
+#introduction {
+  margin-bottom: 20px; /* セクション間の余白 */
+}
+/* Introductionタイトルのスタイル */
+.title-intro {
+  font-family: "Times New Roman", serif; /* Times New Romanフォントを使用 */
+  font-size: 46px; /* フォントサイズ */
+  font-weight: 500; /* 中程度の太さ */
+  color: #1c1f5f; /* テキスト色を濃い青に設定 */
+  margin-bottom: 30px; /* 下部に余白 */
+  text-align: center; /* テキストを中央揃え */
+}
+/* Introduction内の小見出し（h3）のスタイル */
+#introduction h3 {
+  font-size: 28px; /* フォントサイズ */
+  font-weight: 700; /* 太字 */
+  margin-bottom: 30px; /* 下部に余白 */
+}
+/* カラム（左右に分ける要素）のスタイル */
+.column-intro {
+  width: 50%; /* カラムの幅を全体の50%に設定 */
+}
+/* テキスト部分のスタイル */
+.text {
+  font-family: "Times New Roman", serif; /* Times New Romanフォントを使用 */
+  font-size: 18px; /* フォントサイズ */
+  line-height: 1.8; /* 行間を1.8倍に設定 */
+  margin-bottom: 10px; /* 各段落の下に余白を追加 */
+}
+/* キーワードタイトル部分のスタイル */
+.text-keyword {
+  font-family: "Times New Roman", serif; /* Times New Romanフォントを使用 */
+  color: #1c1f5f; /* テキスト色を濃い青に設定 */
+  font-size: 18px; /* フォントサイズ */
+  line-height: 1.8; /* 行間を1.8倍に設定 */
+  text-align: center; /* テキストを中央揃え */
+  margin-bottom: 10px; /* 各段落の下に余白を追加 */
+}
+/* キーワードボックスのスタイル */
+.keyword-box {
+  display: inline-block; /* インラインブロック要素として表示 */
+  padding: 10px 20px; /* 内側の余白 */
+  margin: 5px; /* ボックス間の余白 */
+  background: linear-gradient(
+    90deg,
+    #ddf8fd,
+    #dfe7fd
+  ); /* 水平方向のグラデーション背景 */
+  border-radius: 20px; /* 角を丸く設定 */
+  color: #555; /* テキスト色をグレーに設定 */
+  font-size: 0.9rem; /* フォントサイズを0.9remに設定 */
+  font-weight: bold; /* 太字 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーション */
+}
+/* レスポンシブデザイン: スマホ向け設定 */
+/* 画面幅が867px以下の場合のスタイル調整 */
+@media (max-width: 885px) {
+  /* Introduction内のカラム要素（主にテキスト部分）のスタイル */
+  .column-intro {
+    width: 95%; /* 幅を画面幅の95%に設定 */
+    max-width: 885px; /* 幅の上限を767pxに設定 */
+  }
+  /* キーワードボックスのスタイル */
+  .keyword-box {
+    width: 80%; /* 幅を全体の80%に縮小 */
+    display: block; /* ブロック要素として表示（縦並びに） */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto; /* 左右中央揃え */
+  }
+  /* Introduction内の画像スタイル */
+  .img-intro {
+    display: block; /* ブロック要素として表示（縦並び） */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto; /* 左右中央揃え */
+  }
+}
+
+/* ------Newsセクション ------ */
+/* タイトルのスタイル */
 .title-news {
-  font-family: "Times New Roman", serif;
-  font-size: 46px;
-  font-weight: 500;
-  color:  #1c1f5f;
-  margin-bottom: 30px;
-  text-align: center;
+  font-family: "Times New Roman", serif; /* フォント設定 */
+  font-size: 46px; /* タイトルのフォントサイズ */
+  font-weight: 500; /* フォントの太さ */
+  color: #1c1f5f; /* テキスト色を濃い青に設定 */
+  margin-bottom: 30px; /* タイトル下の余白 */
+  text-align: center; /* テキストを中央揃え */
 }
-/* .top-news-tabs i {
-  font-size: 0.85rem;
-  vertical-align: middle;
-  margin-right: 0.3rem;
-} */
+/* トップニュース全体のパディング */
 .top-news-area {
-  padding: 60px 20px 0;
+  padding: 60px 20px 0; /* 上側60px、左右20pxの余白を追加 */
 }
-/* .top-news-area h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  border-left: 6px solid #0e8196;
-  padding-left: 15px;
-  position: relative;
-} */
+/* タブのスタイル */
 .tab-item {
-  border: 1px solid #0e8196;
-  font-size: .75rem;
-  cursor: pointer;
-  padding: 5px 8px;
-  transition: .5s;
-  display: inline-block;
-  margin-bottom: 5px;
-  text-align:center;
-  width: 49%;
+  border: 1px solid #0e8196; /* 枠線の色を指定 */
+  font-size: 0.75rem; /* フォントサイズ */
+  cursor: pointer; /* ポインターをクリック可能に */
+  padding: 5px 8px; /* 内側の余白を指定 */
+  transition: 0.5s; /* ホバー時のアニメーション効果 */
+  display: inline-block; /* インラインブロック要素として配置 */
+  margin-bottom: 5px; /* 下に余白を追加 */
+  text-align: center; /* テキストを中央揃え */
+  width: 49%; /* タブの幅を50%未満に設定 */
 }
+/* タブホバー時の背景色変更 */
 .tab-item:hover {
-  background-color: #0e8196;
+  background-color: #0e8196; /* ホバー時に背景色を変更 */
+  opacity: 0.7; /* 透明度を少し上げる */
 }
+/* 各タブの個別スタイル */
+.tab-item.all {
+  border: 1px solid #d2f9d5; /* 枠線色を変更 */
+  background-color: #d2f9d5; /* 背景色を淡い緑に設定 */
+}
+.tab-item.news {
+  border: 1px solid #fecea3; /* 枠線色を変更 */
+  background-color: #fecea3; /* 背景色をオレンジに設定 */
+}
+.tab-item.event {
+  border: 1px solid #a7d2fa; /* 枠線色を変更 */
+  background-color: #a7d2fa; /* 背景色を淡い青に設定 */
+}
+/* タブの選択状態に応じた内容の表示 */
 input[name="tab-item"] {
-  display: none;
-}
-.tab-content {
-  padding: 20px 0 80px;
-	display:none;
+  display: none; /* ラジオボタンを非表示に */
 }
 #all:checked ~ #all-content,
 #news:checked ~ #news-content,
 #event:checked ~ #event-content {
-  display: block;
+  display: block; /* チェックされたタブの内容を表示 */
 }
-.tab-item:hover {
-  opacity: 0.7;
+/* コンテンツエリアのスタイル */
+.tab-content {
+  padding: 20px 0 80px; /* 上20px、下80pxの余白 */
+  display: none; /* デフォルトでは非表示 */
 }
-.tab-item.all {
-  border: 1px solid #d2f9d5;
-  background-color: #d2f9d5;
-}
-.tab-item.news {
-  border: 1px solid #FECEA3;
-  background-color: #FECEA3;
-}
-.tab-item.event {
-  border: 1px solid #A7D2FA;
-  background-color: #A7D2FA;
-}
+/* トップニュースリストのスタイル */
 ul.top-news-list {
-	height:281px;
-	overflow-y:scroll;
-  list-style: none;
-  padding:0;
-  margin: 0;
+  height: 281px; /* 固定高さ */
+  overflow-y: scroll; /* 縦方向にスクロール可能 */
+  list-style: none; /* リストマーカーを削除 */
+  padding: 0; /* 内側余白を削除 */
+  margin: 0; /* 外側余白を削除 */
 }
+/* ニュースリスト内のリンクスタイル */
 ul.top-news-list li a {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  color: #414141;
-  border-bottom: 1px solid #dcdcdc;
-  padding: 15px 0;
-  transition: .3s;
+  display: flex; /* フレックスボックスで配置 */
+  flex-wrap: wrap; /* 子要素を折り返し可能に */
+  align-items: center; /* 縦方向中央揃え */
+  color: #414141; /* リンク色を指定 */
+  border-bottom: 1px solid #dcdcdc; /* 下線を追加 */
+  padding: 15px 0; /* 上下の余白 */
+  transition: 0.3s; /* ホバー時のアニメーション */
 }
+/* リンクホバー時の背景色変更 */
 ul.top-news-list li a:hover {
-  background: #ecf4f5;
+  background: #ecf4f5; /* ホバー時の背景色を淡い青に設定 */
 }
+/* リストの最初のアイテムの上線を追加 */
 ul.top-news-list li:first-child {
-  border-top : 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc; /* 上線を追加 */
 }
+/* リスト内の日付スタイル */
 .top-news-list-date {
-  /*font-family: 'Roboto', sans-serif;*/
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-weight: 700;
-  font-size: .9rem;
-  width: 100px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif; /* フォントを指定 */
+  font-weight: 700; /* 太字 */
+  font-size: 0.9rem; /* フォントサイズ */
+  width: 100px; /* 固定幅 */
 }
+/* カテゴリタグのスタイル */
 .top-news-list-category {
-  font-size: .75rem;
-  background-color: #0e8196;
-  color: #000;
-  width: 140px;
-  text-align: center;
-  height:20px;
-  line-height: 20px;
+  font-size: 0.75rem; /* フォントサイズ */
+  background-color: #0e8196; /* 背景色 */
+  color: #000; /* 文字色を黒に */
+  width: 140px; /* 固定幅 */
+  text-align: center; /* テキストを中央揃え */
+  height: 20px; /* 固定高さ */
+  line-height: 20px; /* テキストを中央揃え */
 }
+/* ニュースタイトルのスタイル */
 .top-news-list-title {
-  margin: 10px 0 0;
-  width: 100%;
-  font-size:.9rem;
-  line-height: 1.6;
+  margin: 10px 0 0; /* 上余白を追加 */
+  width: 100%; /* 幅を全体に設定 */
+  font-size: 0.9rem; /* フォントサイズ */
+  line-height: 1.6; /* 行間を設定 */
 }
+/* 強調ラベルのスタイル */
 .top-news-list-title span.attention {
-  font-size: 77%;
-  font-weight: bold;
-  color: white;
-  padding: 2px 7px;
-  margin: 0 5px 0 0;
-  background: crimson;
-  vertical-align: text-bottom;
-  border-radius: 4px;
+  font-size: 77%; /* フォントサイズを縮小 */
+  font-weight: bold; /* 太字 */
+  color: white; /* 文字色を白に */
+  padding: 2px 7px; /* 内側余白 */
+  margin: 0 5px 0 0; /* 左右の余白 */
+  background: crimson; /* 背景色を赤に設定 */
+  vertical-align: text-bottom; /* 下揃え */
+  border-radius: 4px; /* 角を丸く設定 */
 }
+/* カテゴリの背景色設定 */
 .category-news {
-  background-color: #FECEA3;
+  background-color: #fecea3; /* ニュースカテゴリの背景色 */
 }
 .category-event {
-  background-color: #A7D2FA;
+  background-color: #a7d2fa; /* イベントカテゴリの背景色 */
 }
-/* Footer */
+/* レスポンシブデザイン: スマホ向け調整 */
+@media (max-width: 768px) {
+  ul.top-news-list {
+    height: auto; /* 高さを自動調整 */
+    overflow-y: visible; /* スクロールを無効化 */
+  }
+}
+
+/* ------Footerセクション ------ */
+/* フッター全体のスタイル */
 footer {
-  background-color: rgb(245, 247, 255); /* 半透明背景 */
-  padding: 80px;
+  background-color: rgb(245, 247, 255); /* フッターの背景色（淡い色） */
+  padding: 80px; /* 内側余白を追加 */
 }
+/* フッターのコンテナ設定 */
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex; /* フレックスボックスで子要素を配置 */
+  justify-content: space-between; /* 子要素を左右に均等配置 */
+  max-width: 1200px; /* 最大幅を1200pxに制限 */
+  margin: 0 auto; /* コンテナを中央揃え */
 }
+/* フッターロゴのスタイル */
 .footer-logo {
-  height: 100px; /* ロゴの高さを調整 */
-  margin-right: 24px;
+  height: 100px; /* ロゴの高さを指定 */
+  margin-right: 24px; /* ロゴと隣接要素の間に余白 */
 }
+/* フッターのセクション */
 .footer-section {
-  display: flex;
-  margin-right: 10px;
+  display: flex; /* フレックスボックスで子要素を配置 */
+  margin-right: 10px; /* 右側に余白を追加 */
 }
+/* フッターセクションの見出し（h2）のスタイル */
 .footer-section h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-top: 18px;
-  margin-bottom: 15px;
-  /* color: #fff; */
-  display: inline-block;
+  font-size: 32px; /* 見出しのフォントサイズ */
+  font-weight: 700; /* 太字 */
+  margin-top: 18px; /* 上部に余白 */
+  margin-bottom: 15px; /* 下部に余白 */
+  display: inline-block; /* インラインブロック要素として配置 */
 }
+/* フッターセクションのサブ見出し（h3）のスタイル */
 .footer-section h3 {
-  font-size: 32px;
-  margin-right: 46px;
-  margin-bottom: 14px;
-  /* color: #fff; */
+  font-size: 32px; /* サブ見出しのフォントサイズ */
+  margin-right: 46px; /* 右側に余白 */
+  margin-bottom: 14px; /* 下部に余白 */
 }
+/* フッターセクション内のリスト */
 .footer-section ul {
-  list-style: none;
+  list-style: none; /* リストマーカーを非表示に */
 }
+/* フッターリスト項目のスタイル */
 .footer-section ul li {
-  font-size: 24px;
-  line-height: 2.0;
-  margin-bottom: 10px;
-  /* color: #fff; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
+  font-size: 24px; /* フォントサイズ */
+  line-height: 2; /* 行間を設定 */
+  margin-bottom: 10px; /* 下部に余白 */
+  display: flex; /* フレックスボックスで子要素を配置 */
+  justify-content: space-between; /* 子要素を左右に均等配置 */
+  align-items: center; /* 子要素を縦方向に中央揃え */
+  cursor: pointer; /* ポインタをクリック可能に */
 }
-.footer-section li a { /* リンクのホバーエフェクト */
-  font-size: 20px;
-  position: relative;
-  color: #333; /* 通常時の色 */
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s; /* アニメーションの設定 */
+/* リンクの基本スタイル */
+.footer-section li a {
+  font-size: 20px; /* フォントサイズ */
+  position: relative; /* アニメーション用の相対位置 */
+  color: #333; /* 通常時の文字色 */
+  text-decoration: none; /* 下線を非表示に */
+  transition: color 0.3s, transform 0.3s; /* ホバー時のアニメーション */
 }
+/* リンクホバー時のスタイル */
 .footer-section li a:hover {
-  color: rgb(46, 180, 1); /* ホバー時の色 */
+  color: rgb(46, 180, 1); /* ホバー時の文字色 */
   transform: scale(1.1); /* ホバー時に少し拡大 */
 }
-.footer-section li a::after { /* 下線のアニメーション */
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgb(46, 180, 1);
+/* リンクホバー時の下線アニメーション */
+.footer-section li a::after {
+  content: ""; /* 擬似要素で下線を生成 */
+  position: absolute; /* リンク内に絶対配置 */
+  bottom: -5px; /* リンクの下部に配置 */
+  left: 0; /* 左端から配置 */
+  width: 100%; /* 下線幅をリンク全体に設定 */
+  height: 2px; /* 下線の高さ */
+  background: rgb(46, 180, 1); /* 下線の色 */
   transform: scaleX(0); /* 初期状態で非表示 */
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  transform-origin: left; /* 左からアニメーション開始 */
+  transition: transform 0.3s ease; /* アニメーション効果 */
 }
 .footer-section li a:hover::after {
-  transform: scaleX(1); /* ホバー時に表示 */
+  transform: scaleX(1); /* ホバー時に下線を表示 */
 }
+/* フッターのテキスト部分のスタイル */
 .footer-text {
-  margin-top: 110px;
-  font-size: 24px;
+  margin-top: 110px; /* 上部に余白 */
+  font-size: 24px; /* フォントサイズ */
 }
 .footer-text2 {
-  margin-top: 20px;
-  font-size: 20px;
+  margin-top: 20px; /* 上部に余白 */
+  font-size: 20px; /* フォントサイズ */
 }
-/* -------------------------------- */
+/* レスポンシブデザイン: 画面幅1165px以下のスタイル調整 */
+@media (max-width: 1165px) {
+  /* フッター全体のパディング調整 */
+  footer {
+    padding: 30px; /* 内側余白を縮小 */
+  }
+  /* フッターコンテナの縦方向配置 */
+  footer .footer-container {
+    flex-direction: column; /* 子要素を縦並びに */
+    align-items: center; /* 子要素を中央揃え */
+    max-width: 1165px; /* 最大幅を調整 */
+    margin: 0 auto; /* 水平中央揃え */
+  }
+  /* フッターロゴの調整 */
+  .footer-logo {
+    height: 80px; /* 高さを縮小 */
+    margin-top: 15px; /* 上部に余白 */
+    margin-right: 18px; /* 右側に余白 */
+  }
+  /* フッターセクションの調整 */
+  footer .footer-section {
+    width: 95%; /* 幅を画面幅の95%に設定 */
+    max-width: 1165px; /* 最大幅を調整 */
+    margin: 0 auto; /* 中央揃え */
+    text-align: center; /* テキストを中央揃え */
+    margin-bottom: 30px; /* 下部に余白 */
+  }
+  /* 最後のフッターセクションの余白を削除 */
+  footer .footer-section:last-child {
+    margin-bottom: 0;
+  }
+  /* フッターテキスト部分のフォントサイズ調整 */
+  .footer-text {
+    margin-top: 110px;
+    font-size: 16px; /* フォントサイズを小さく */
+  }
+  .footer-text2 {
+    margin-top: 20px;
+    font-size: 14px; /* フォントサイズを小さく */
+  }
+}
