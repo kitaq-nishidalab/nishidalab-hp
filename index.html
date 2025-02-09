@@ -93,9 +93,9 @@
       <!-- ウェルカムメッセージ -->
       <section id="introduction" class="container">
         <!-- セクションタイトル -->
-        <h2 class="title-intro">Welcome</h2>
+        <h2 class="title-intro fade-in">Welcome</h2>
         <div class="flex">
-          <div class="column-intro">
+          <div class="column-intro fade-in">
             <!-- 研究概要 -->
             <p class="text">
               多品種製造行程の自動化のために,
@@ -105,39 +105,74 @@
               >」 を提案しています.
             </p>
             <!-- キーワードのリスト -->
-            <p class="text-keyword">七つの技術要素</p>
-            <div class="keyword-box">協働ロボット</div>
-            <div class="keyword-box">グリッパ</div>
-            <div class="keyword-box">ケーブル艤装</div>
-            <div class="keyword-box">三次元計測</div>
-            <div class="keyword-box">動作計画</div>
-            <div class="keyword-box">リスクアセスメント</div>
+            <p class="text-keyword fade-in">七つの技術要素</p>
+            <div class="keyword-box fade-in">協働ロボット</div>
+            <div class="keyword-box fade-in">グリッパ</div>
+            <div class="keyword-box fade-in">ケーブル艤装</div>
+            <div class="keyword-box fade-in">三次元計測</div>
+            <div class="keyword-box fade-in">動作計画</div>
+            <div class="keyword-box fade-in">リスクアセスメント</div>
             <div class="keyword-box">無線通信</div>
           </div>
           <!-- キービジュアル -->
-          <img
-            src="./images/ロボット野菜ピッキング.jpg"
-            alt=""
-            width="390"
-            height="500"
-            class="img-intro"
-          />
+          <div class="img-container">
+            <img
+              src="./images/ロボット野菜ピッキング.jpg"
+              alt=""
+              width="390"
+              height="500"
+              class="img-intro fade-in"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Facebookセクション -->
+      <section id="facebook" class="container">
+        <div class="content-container fade-in">
+          <!-- 画像（左側） -->
+          <div class="">
+            <img src="./images/facebook.png" alt="" />
+          </div>
+
+          <!-- Facebook埋め込み（右側） -->
+          <div class="facebook-container">
+            <div
+              class="fb-page fade-in"
+              data-href="https://www.facebook.com/NishidaTakeshiLab/?locale=ja_JP"
+              data-tabs="timeline"
+              data-width="400"
+              data-height="500"
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/NishidaTakeshiLab/?locale=ja_JP"
+                class="fb-xfbml-parse-ignore"
+              >
+                <a
+                  href="https://www.facebook.com/NishidaTakeshiLab/?locale=ja_JP"
+                  >Nishida Lab. （西田健研究室）</a
+                >
+              </blockquote>
+            </div>
+          </div>
         </div>
       </section>
       <!-- Newsセクション -->
       <section id="top-news" class="container top-news-area times-new-roman">
-        <div class="title-news">
+        <div class="title-news fade-in">
           <h2>News</h2>
         </div>
-        <div class="top-news-tabs">
+        <div class="top-news-tabs fade-in">
           <!-- ラジオボタンでタブを制御 -->
           <input id="all" type="radio" name="tab-item" checked />
-          <label class="tab-item all" for="all">新着情報</label>
-          <!-- 追加のタブ項目 -->
+          <label class="tab-item all fade-in" for="all">新着情報</label>
           <input id="news" type="radio" name="tab-item" />
-          <label class="tab-item news" for="news">お知らせ</label>
+          <label class="tab-item news fade-in" for="news">お知らせ</label>
           <input id="event" type="radio" name="tab-item" />
-          <label class="tab-item event" for="event">イベント</label>
+          <label class="tab-item event fade-in" for="event">イベント</label>
           <!-- タブの内容 -->
           <div class="tab-content" id="all-content">
             <ul class="top-news-list">
@@ -149,7 +184,7 @@
                   <div class="top-news-list-category category-news">
                     お知らせ
                   </div>
-                  <div class="top-news-list-title">お知らせのタイトル1</div>
+                  <div class="top-news-list-title">お知らせのタイトル</div>
                 </a>
               </li>
               <li>
@@ -160,7 +195,37 @@
                   <div class="top-news-list-category category-event">
                     イベント
                   </div>
-                  <div class="top-news-list-title">イベントのタイトル1</div>
+                  <div class="top-news-list-title">イベントのタイトル</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="news-content">
+            <ul class="top-news-list">
+              <li>
+                <a href="" target="_blank">
+                  <div class="top-news-list-date">
+                    <time datetime="2024-12-18T10:30:58+09:00">2024.12.19</time>
+                  </div>
+                  <div class="top-news-list-category category-news">
+                    お知らせ
+                  </div>
+                  <div class="top-news-list-title">お知らせのタイトル</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="event-content">
+            <ul class="top-news-list">
+              <li>
+                <a href="" target="_blank">
+                  <div class="top-news-list-date">
+                    <time datetime="2024-12-17T10:30:58+09:00">2024.12.19</time>
+                  </div>
+                  <div class="top-news-list-category category-event">
+                    イベント
+                  </div>
+                  <div class="top-news-list-title">イベントのタイトル</div>
                 </a>
               </li>
             </ul>
@@ -205,5 +270,13 @@
         </div>
       </div>
     </footer>
+    <script src="scripts/add_listener.js"></script>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v22.0"
+    ></script>
   </body>
 </html>
