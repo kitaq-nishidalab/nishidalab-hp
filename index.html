@@ -22,21 +22,9 @@
           <!-- 研究室ロゴリンク -->
           <a href="index.html" class="logo flex">
             <img src="./images/nishidalab_logo.png" alt="" class="logo-image" />
-            <div>
-              西田健 研究室
-              <p class="times-new-roman">Takeshi Nishida Laboratory</p>
-            </div>
-          </a>
-          <!-- 大学ロゴリンク -->
-          <a href="https://www.kitakyu-u.ac.jp/env/" class="logo2 flex">
-            <img
-              src="./images/University_logo (2).png"
-              alt=""
-              class="logo2-image"
-            />
-            <div>
-              北九州市立大学 国際環境工学部
-              <p class="">THE UNIVERSITY OF KITAKYUSHU</p>
+            <div class="logo-text">
+              <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+              西田健研究室
             </div>
           </a>
         </div>
@@ -46,7 +34,8 @@
         <div class="flex">
           <nav>
             <!-- メニューナビゲーション -->
-            <ul class="header_menu flex times-new-roman">
+            <ul class="header_menu flex">
+              <li><a href="./index.html">トップ</a></li>
               <li><a href="./research.html">研究内容</a></li>
               <li><a href="./member.html">メンバー</a></li>
               <li><a href="./results.html">研究成果</a></li>
@@ -65,6 +54,7 @@
         </label>
         <nav class="drawer-content">
           <ul class="drawer-list">
+            <li class="drawer-item"><a href="./index.html">トップ</a></li>
             <li class="drawer-item"><a href="./research.html">研究内容</a></li>
             <li class="drawer-item"><a href="./member.html">メンバー</a></li>
             <li class="drawer-item"><a href="./results.html">研究成果</a></li>
@@ -80,7 +70,7 @@
     <!-- メインコンテンツ -->
     <main>
       <!-- ヒーローセクション（メインビジュアル） -->
-      <section id="hero" class="">
+      <section id="hero">
         <div class="hero_inner">
           <!-- キャッチコピー -->
           <p class="times-new-roman">
@@ -88,6 +78,9 @@
           </p>
           <h1 class="times-new-roman">人と交代で勤務するロボットの実現</h1>
         </div>
+        <!-- フェードアニメーション用の画像コンテナ -->
+        <div class="hero-bg bg1"></div>
+        <div class="hero-bg bg2"></div>
       </section>
 
       <!-- ウェルカムメッセージ -->
@@ -238,16 +231,20 @@
     <footer>
       <div class="footer-container times-new-roman">
         <div class="footer-section">
-          <img src="./images/nishidalab_logo.png" alt="" class="footer-logo" />
-          <div>
-            <h2>西田健 研究室</h2>
-            <p>Takeshi Nishida Laboratory</p>
+          <img
+            src="./images/nishidalab_logo.png"
+            alt=""
+            class="footer-logo-image"
+          />
+          <div class="footer-logo-text">
+            <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+            西田健研究室
           </div>
         </div>
         <!-- メニューナビゲーション -->
         <div class="footer-section">
-          <h3>Menu</h3>
           <ul>
+            <li><a href="./index.html">トップ</a></li>
             <li><a href="./research.html">研究内容</a></li>
             <li><a href="./member.html">メンバー</a></li>
             <li><a href="./results.html">研究成果</a></li>

@@ -6,12 +6,12 @@
     <!-- レスポンシブ対応: モバイル端末でも適切に表示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- ページタイトル -->
-    <title>トップページ Nishida Lab.</title>
+    <title>研究内容 Nishida Lab.</title>
 
     <!-- リセットCSSを適用 -->
     <link rel="stylesheet" href="./css/reset.css" />
     <!-- メインのスタイルシート -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style_research.css" />
   </head>
   <body>
     <!-- ヘッダー全体を囲む -->
@@ -22,21 +22,9 @@
           <!-- 研究室ロゴリンク -->
           <a href="index.html" class="logo flex">
             <img src="./images/nishidalab_logo.png" alt="" class="logo-image" />
-            <div>
-              西田健 研究室
-              <p class="times-new-roman">Takeshi Nishida Laboratory</p>
-            </div>
-          </a>
-          <!-- 大学ロゴリンク -->
-          <a href="https://www.kitakyu-u.ac.jp/env/" class="logo2 flex">
-            <img
-              src="./images/University_logo (2).png"
-              alt=""
-              class="logo2-image"
-            />
-            <div>
-              北九州市立大学 国際環境工学部
-              <p class="">THE UNIVERSITY OF KITAKYUSHU</p>
+            <div class="logo-text">
+              <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+              西田健研究室
             </div>
           </a>
         </div>
@@ -46,7 +34,8 @@
         <div class="flex">
           <nav>
             <!-- メニューナビゲーション -->
-            <ul class="header_menu flex times-new-roman">
+            <ul class="header_menu flex">
+              <li><a href="./index.html">トップ</a></li>
               <li><a href="./research.html">研究内容</a></li>
               <li><a href="./member.html">メンバー</a></li>
               <li><a href="./results.html">研究成果</a></li>
@@ -65,6 +54,7 @@
         </label>
         <nav class="drawer-content">
           <ul class="drawer-list">
+            <li class="drawer-item"><a href="./index.html">トップ</a></li>
             <li class="drawer-item"><a href="./research.html">研究内容</a></li>
             <li class="drawer-item"><a href="./member.html">メンバー</a></li>
             <li class="drawer-item"><a href="./results.html">研究成果</a></li>
@@ -80,21 +70,159 @@
     <!-- メインコンテンツ -->
     <main>
       <!-- ヒーローセクション（メインビジュアル） -->
-      <section id="hero" class="">
-        <div class="hero_inner">
-          <!-- キャッチコピー -->
-          <p class="times-new-roman">
-            Realizing Robots that Work Alternately with Humans
-          </p>
-          <h1 class="times-new-roman">人と交代で勤務するロボットの実現</h1>
+      <section id="hero">
+        <div class="flex hero-header">
+          <!-- 研究室ロゴリンク -->
+          <a href="research.html" class="hero-logo logo-flex">
+            <img
+              src="./images/lab_research_logo.png"
+              alt=""
+              class="hero-logo-img"
+            />
+            <div>RESEARCH</div>
+          </a>
+        </div>
+        <div class="flex hero-container">
+          <div class="hero-content">
+            <p>
+              ロボット工学は、機械工学だけでなく電磁気学、制御工学、信号処理、ソフトウェア工学、AIなどを網羅する総合的な学問です。
+              さらに、それを利用する人との協調や安全など、社会的な側面も重要な研究対象です。
+              多くの産業領域から、AIを搭載した利用しやすいロボットの登場を待ち望まれており、社会的な使命感を強く持って研究開発しています。
+            </p>
+          </div>
+          <img
+            src="./images/sim_pr_visual.png"
+            alt=""
+            class="hero-img"
+            id="hero-img"
+          />
+        </div>
+        <!-- 研究テーマ一覧 -->
+        <div class="container hero-grid">
+          <button data-target="pathplan" class="hero-btn">
+            ロボットの動作計画 ▼
+          </button>
+          <button data-target="autonomous" class="hero-btn">自律走行 ▼</button>
+          <button data-target="recognition" class="hero-btn">
+            三次元計測 ▼
+          </button>
+          <button data-target="calibration" class="hero-btn">
+            キャリブレーション ▼
+          </button>
         </div>
       </section>
 
-      <!-- ウェルカムメッセージ -->
-      <section id="introduction" class="container">
+      <!-- 研究内容の本文 -->
+      <section id="pathplan" class="container">
         <!-- セクションタイトル -->
-        <h2 class="title-intro">Research Content</h2>
-        <div class="flex"></div>
+        <h2 class="title-research fade-in">ロボットの動作計画</h2>
+        <div class="flex-start">
+          <div class="column-research fade-in">
+            <!-- 研究概要 -->
+            <p class="text">
+              当研究室で提案している「パス再利用法を組み込んだステートマシン」によるロボットの駆動の様子です．
+              次々と変化するタスクに合わせて，動的かつ自律的にパスを再調整し，途切れることなく動作します．
+              このような高品質かつ高速で柔軟なタスク実行が，10万円台のノートPCで可能です．
+              #パス再利用法 #ステートマシン #垂直多関節ロボット
+            </p>
+            <p class="text">
+              Nishida Lab. （西田健研究室）の投稿 2025年1月30日木曜日
+            </p>
+          </div>
+          <!-- キービジュアル -->
+          <div class="video-container fade-in">
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=350&href=https%3A%2F%2Fwww.facebook.com%2FNishidaTakeshiLab%2Fvideos%2F539188142474266%2F&show_text=false&width=560&t=0"
+              width="500"
+              height="300"
+              style="border: none; overflow: hidden"
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="autonomous" class="container">
+        <h2 class="title-research fade-in">自律走行</h2>
+        <div class="flex-start">
+          <div class="column-research fade-in">
+            <!-- 研究概要 -->
+            <p class="text">
+              当研究室の学部３年生が実装したROS2を用いたRPLiDARとWHILLによる遠隔自律走行の様子です．
+            </p>
+            <p class="text">＃無線通信＃遠隔自律走行</p>
+            <p class="text">
+              当研究室では，⾃然⾔語によるロボットの操作指令を⽣成し，WHILLを自律走行させる研究なども行っています．
+            </p>
+          </div>
+          <!-- キービジュアル -->
+          <div class="video-container fade-in">
+            <video src="./videos/autonomous.mp4" autoplay muted loop></video>
+          </div>
+        </div>
+      </section>
+
+      <section id="recognition" class="container">
+        <h2 class="title-research fade-in">三次元計測</h2>
+        <div class="flex-start">
+          <div class="column-research fade-in">
+            <!-- 研究概要 -->
+            <p class="text">
+              産業用ロボットによる対象物操作を目的として，対象物のリアルタイム三次元計測システムを開発しました．
+              データベースに登録されている3次元データと，安価な三次元計測センサ（Intel
+              D435）による計測データを照合し，0.02秒で高精度の姿勢推定を実現します．
+              「三次元の見え方」を推論する「MaskNet」，高速照合手法「SVDマッチング」，カルマンフィルタを組み合わせて，この性能を実現しました．
+              この手法のソースコードは以下からダウンロードできます．
+            </p>
+            <a href="https://github.com/kitaq-nishidalab/MaskSVD" class>
+              https://github.com/kitaq-nishidalab/MaskSVD
+            </a>
+            <p class="text">
+              #安価なデプスセンサ #リアルタイム三次元姿勢推定 #ロボット
+              #ビンピッキング 表示を縮小
+            </p>
+            <p class="text">
+              Nishida Lab. （西田健研究室）の投稿 2025年1月30日木曜日
+            </p>
+          </div>
+          <!-- キービジュアル -->
+          <div class="video-container fade-in">
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FNishidaTakeshiLab%2Fvideos%2F2326992890994509%2F&show_text=false&width=560&t=0"
+              width="500"
+              height="300"
+              style="border: none; overflow: hidden"
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="calibration" class="container">
+        <h2 class="title-research fade-in">キャリブレーション</h2>
+        <div class="flex-start">
+          <div class="column-research fade-in">
+            <!-- 研究概要 -->
+            <p class="text">
+              【1G1-15】Instant-ngpによる複数カメラのキャリブレーション,
+              谷口右京, 西田健, pp.1203-1208
+            </p>
+            <p class="text">
+              概要：複数視点の画像を用いて異なる視点の画像を生成する手法であるInstant-ngpを用いて，複数の固定カメラのカメラキャリブレーションが実現できることを示す．
+              また，Instant-ngpのカメラパラメータ精度が従来のSfMよりも高いことを実験的に示す
+            </p>
+          </div>
+          <!-- キービジュアル -->
+          <div class="video-container fade-in"></div>
+        </div>
       </section>
     </main>
 
@@ -102,16 +230,20 @@
     <footer>
       <div class="footer-container times-new-roman">
         <div class="footer-section">
-          <img src="./images/nishidalab_logo.png" alt="" class="footer-logo" />
-          <div>
-            <h2>西田健 研究室</h2>
-            <p>Takeshi Nishida Laboratory</p>
+          <img
+            src="./images/nishidalab_logo.png"
+            alt=""
+            class="footer-logo-image"
+          />
+          <div class="footer-logo-text">
+            <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+            西田健研究室
           </div>
         </div>
         <!-- メニューナビゲーション -->
         <div class="footer-section">
-          <h3>Menu</h3>
           <ul>
+            <li><a href="./index.html">トップ</a></li>
             <li><a href="./research.html">研究内容</a></li>
             <li><a href="./member.html">メンバー</a></li>
             <li><a href="./results.html">研究成果</a></li>
@@ -134,5 +266,13 @@
         </div>
       </div>
     </footer>
+    <script src="scripts/add_listener_research.js"></script>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v22.0"
+    ></script>
   </body>
 </html>

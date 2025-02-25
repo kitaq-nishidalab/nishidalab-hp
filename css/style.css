@@ -1,3 +1,5 @@
+/* --------------------------------- */
+/* 各種基本定義 */
 /* フォントのインポート */
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Antique&display=swap");
 /* 全体のフォントスタイル設定 */
@@ -5,9 +7,6 @@ html {
   font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
 }
 /* 特定のフォントスタイルを定義 */
-.pop {
-  font-family: "Poppins", sans-serif; /* Poppinsフォント */
-}
 .times-new-roman {
   font-family: "Times New Roman", serif; /* Times New Romanフォント */
 }
@@ -26,8 +25,12 @@ html {
   flex-wrap: wrap; /* 子要素が幅を超える場合折り返し */
   align-items: center; /* 子要素を縦方向中央揃え */
 }
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* スマートフォン向けスタイル */
-@media (max-width: 768px) {
+@media (max-width: 885px) {
   .flex {
     flex-direction: column; /* 縦並びに変更 */
     align-items: center; /* 子要素を中央揃え */
@@ -38,9 +41,6 @@ html {
     /* background-color: green; コメントアウトされた背景色 */
     margin: 0 auto; /* 水平中央揃え */
     position: relative; /* 相対位置を指定 */
-  }
-  .header_menu li {
-    margin-left: 20px; /* メニュー間隔を調整 */
   }
   img {
     max-width: 100%; /* 画像が画面幅を超えないよう調整 */
@@ -59,13 +59,15 @@ html {
     display: none; /* ドロワーメニューを非表示 */
   }
 }
-
-/* -------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------body------ */
 /* ページ全体のスタイル */
 body {
   margin: 0; /* ページ余白を削除 */
-  font-family: "Arial", sans-serif; /* Arialフォントを使用 */
+  font-family: "Noto Sans JP", sans-serif;
   font-size: calc(16px + 0.5vw); /* 画面幅に応じたフォントサイズ */
 }
 .fade-in {
@@ -73,19 +75,21 @@ body {
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
 }
-
 .delay {
   transition-delay: 0.3s;
 }
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------ Header 全体のスタイル ------ */
 /* ヘッダー全体の幅と中央揃え */
 header {
-  width: 95%; /* ヘッダー全体の幅を指定 */
+  width: 100%; /* ヘッダー全体の幅を指定 */
   margin: 0 auto; /* 中央揃え */
 }
 /* ヘッダー上部の背景色と余白 */
@@ -99,10 +103,9 @@ header {
   padding: 15px 0; /* 上下の余白を設定 */
   text-align: center; /* テキスト中央揃え */
 }
-
 /* ------ スマホ向けドロワーメニュー設定 ------ */
 /* ドロワーメニューの基本スタイル */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .drawer {
     width: 55px; /* ドロワーボタンの幅 */
     height: 70px; /* ドロワーボタンの高さ */
@@ -193,14 +196,14 @@ input {
 .drawer-hidden {
   display: none; /*チェックボックスの非表示 */
 }
-
 /* ------ ロゴ部分のスタイル ------ */
 /* 研究室ロゴ */
 .logo {
-  font-family: "Times New Roman", serif; /* フォント設定 */
-  font-size: 32px; /* フォントサイズ */
-  font-weight: 500; /* 太さ */
-  letter-spacing: -0.04em; /* 文字間隔調整 */
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
+  font-size: 24px; /* フォントサイズ */
+  font-weight: 300; /* 太さ */
+  letter-spacing: 0.04em; /* 文字間隔調整 */
+  margin-left: 18px;
 }
 /* ロゴ画像 */
 .logo-image {
@@ -208,32 +211,43 @@ input {
   height: 60px; /* 高さを指定 */
   margin-right: 18px; /* 画像と文字の間に余白 */
 }
+.logo-text {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* 中央揃え */
+  text-align: center; /* テキストを中央揃え */
+  line-height: 1.2;
+}
 /* ロゴ下のテキスト */
 .logo p {
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
   color: rgb(236, 186, 7); /* テキスト色 */
-  font-size: 18px; /* フォントサイズ */
+  font-size: 24px; /* フォントサイズ */
 }
 /* 大学ロゴ */
 .logo2 {
   font-size: 16px; /* フォントサイズ */
-  font-weight: 100; /* 太さ */
+  font-weight: 300; /* 太さ */
   letter-spacing: -0.04em; /* 文字間隔調整 */
+  margin-right: 18px;
 }
 .logo2-image {
   height: 32px; /* 高さを指定 */
   margin-right: 10px; /* 画像と文字の間に余白 */
 }
 .logo2 p {
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
   font-size: 10px; /* フォントサイズ */
 }
-
 /* ------ メニューリンクのスタイル ------ */
 .header_menu li {
   margin-left: 60px; /* メニュー間の余白 */
 }
 /* リンクのホバーエフェクト */
 .header_menu li a {
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
   font-size: 18px; /* フォントサイズ */
+  font-weight: 400;
   position: relative; /* アニメーション用の相対位置指定 */
   color: #333; /* 通常時の文字色 */
   text-decoration: none; /* 下線を削除 */
@@ -260,70 +274,58 @@ input {
 .header_menu li a:hover::after {
   transform: scaleX(1); /* ホバー時に下線を表示 */
 }
-
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------ Mainセクション ------ */
 /* Heroセクション（メインビジュアル） */
-#hero {
-  /* background-image: url(../images/lab.jpg); */
-  background-position: top; /* 背景画像の配置位置 */
-  background-size: cover; /* 背景画像を要素全体に拡大縮小して表示 */
-  width: 100vw; /* 要素の幅を画面幅全体に設定 */
-  height: 740px; /* 高さを固定 */
-  /* border-radius: 30px; コメントアウト：角を丸くする設定 */
-  position: relative; /* 子要素を相対配置で配置可能に */
-  display: flex; /* Flexboxを使用して子要素を配置 */
-  align-items: center; /* 子要素を縦方向の中央に配置 */
-  margin-bottom: 70px; /* セクション間の余白 */
-  overflow: hidden; /* コンテンツがはみ出さないように隠す */
-}
-
 .hero-slide.active {
   opacity: 1;
 }
-/* Heroセクションに半透明のオーバーレイを追加 */
-#hero::before {
-  content: ""; /* 空の擬似要素を生成 */
-  width: 100%; /* 要素全体をカバーする幅 */
-  height: 100%; /* 要素全体をカバーする高さ */
-  background-color: #000; /* 背景色を黒に設定 */
-  position: absolute; /* 親要素に対して絶対配置 */
-  top: 0; /* 上端から配置 */
-  left: 0; /* 左端から配置 */
-  opacity: 0.2; /* 半透明に設定 */
-  z-index: 1; /* Heroのテキストより後ろに配置 */
+#hero {
+  position: relative;
+  width: 100vw;
+  height: 780px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 70px;
 }
-#hero_roboapp {
-  background-image: url(../images/スマホアイコン.jpg); /* 背景画像を設定 */
-  background-position: top; /* 背景画像の配置位置 */
-  background-size: cover; /* 背景画像を要素全体に拡大縮小して表示 */
-  width: 100vw; /* 要素の幅を画面幅全体に設定 */
-  height: 540px; /* 高さを固定 */
-  /* border-radius: 30px; コメントアウト：角を丸くする設定 */
-  position: relative; /* 子要素を相対配置で配置可能に */
-  display: flex; /* Flexboxを使用して子要素を配置 */
-  align-items: center; /* 子要素を縦方向の中央に配置 */
-  margin-bottom: 70px; /* セクション間の余白 */
-  overflow: hidden; /* コンテンツがはみ出さないように隠す */
+/* 2つの背景画像を重ねる */
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  /* background-position: center; */
+  transition: opacity 1.5s ease-in-out;
 }
-/* Heroセクションに半透明のオーバーレイを追加 */
-#hero_roboapp::before {
-  content: ""; /* 空の擬似要素を生成 */
-  width: 100%; /* 要素全体をカバーする幅 */
-  height: 100%; /* 要素全体をカバーする高さ */
-  background-color: #000; /* 背景色を黒に設定 */
-  position: absolute; /* 親要素に対して絶対配置 */
-  top: 0; /* 上端から配置 */
-  left: 0; /* 左端から配置 */
-  opacity: 0.2; /* 半透明に設定 */
-  z-index: 1; /* Heroのテキストより後ろに配置 */
+/* 最初に表示される画像 */
+.bg1 {
+  opacity: 1;
 }
-/* Hero内のテキストコンテナ */
+/* 切り替え時に表示される画像 */
+.bg2 {
+  opacity: 0;
+}
+/* Heroセクション内のテキスト */
 .hero_inner {
-  z-index: 2; /* Heroの背景より前に表示 */
-  color: #ffff; /* テキストの色を白に設定 */
-  /* background-color: green; コメントアウト：背景色を緑にする設定 */
-  width: 100%; /* コンテナの幅を全体に設定 */
-  text-align: center; /* テキストを中央揃え */
+  z-index: 2;
+  color: #ffffff;
+  text-align: center;
+}
+/* Heroのオーバーレイ（暗くする効果） */
+#hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* 透明な黒 */
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 /* Heroセクション内のキャッチコピー（サブテキスト） */
 .hero_inner p {
@@ -337,7 +339,7 @@ input {
   font-weight: 700; /* フォントを太字に */
   margin-bottom: 30px; /* 下に余白を追加 */
 }
-@media (max-width: 768px) {
+@media (max-width: 885px) {
   #hero .hero_inner p {
     font-size: 16px; /* フォントサイズを小さく */
     font-weight: 500; /* フォントの太さ */
@@ -352,8 +354,17 @@ input {
     height: auto; /* 高さを自動調整 */
     padding: 90px 0; /* 上下の余白を追加 */
   }
+  .logo {
+    margin-left: 0px;
+  }
+  .logo2 {
+    margin-right: 0px;
+  }
 }
-
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------Introductionセクション ------ */
 /* Introduction全体の設定 */
 #introduction {
@@ -421,14 +432,12 @@ input {
     height: auto;
     z-index: 1;
   }
-
   .img-container {
     position: relative;
     width: 100%;
     height: auto;
     display: inline-block;
   }
-
   /* オーバーレイを追加 */
   .img-container::before {
     content: ""; /* 擬似要素の内容を空に */
@@ -440,7 +449,6 @@ input {
     background-color: rgba(255, 255, 255, 0.7); /* 半透明の赤 */
     z-index: 2; /* 画像より前面 */
   }
-
   /* キーワードリストのコンテナ */
   .column-intro {
     position: absolute;
@@ -454,7 +462,6 @@ input {
     padding: 10px;
     z-index: 3; /* 画像より前面に表示 */
   }
-
   /* キーワードボックスのデザイン */
   .keyword-box {
     width: 45%; /* 横幅を45% */
@@ -465,17 +472,14 @@ input {
     background: linear-gradient(90deg, #ddf8fd, #dfe7fd);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-
   /* 左側配置（奇数番目） */
   .keyword-box:nth-child(odd) {
     left: 5%;
   }
-
   /* 右側配置（偶数番目） */
   .keyword-box:nth-child(even) {
     right: 5%;
   }
-
   /* キーワードボックスの縦方向の配置 */
   .keyword-box:nth-child(1) {
     top: 10%;
@@ -499,7 +503,10 @@ input {
     top: 70%;
   }
 }
-
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------Facebookセクション ------ */
 .content-container {
   display: flex;
@@ -522,12 +529,15 @@ input {
   overflow: hidden; /* はみ出しを防ぐ */
   border-radius: 10px; /* 角を丸く */
 }
-
 @media (max-width: 1132px) {
   .content-container {
     justify-content: center;
   }
 }
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------Newsセクション ------ */
 /* タイトルのスタイル */
 .title-news {
@@ -662,7 +672,10 @@ ul.top-news-list li:first-child {
     overflow-y: visible; /* スクロールを無効化 */
   }
 }
-
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
 /* ------Footerセクション ------ */
 /* フッター全体のスタイル */
 footer {
@@ -676,27 +689,40 @@ footer {
   max-width: 1200px; /* 最大幅を1200pxに制限 */
   margin: 0 auto; /* コンテナを中央揃え */
 }
-/* フッターロゴのスタイル */
-.footer-logo {
-  height: 100px; /* ロゴの高さを指定 */
-  margin-right: 24px; /* ロゴと隣接要素の間に余白 */
-}
 /* フッターのセクション */
 .footer-section {
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
   display: flex; /* フレックスボックスで子要素を配置 */
-  margin-right: 10px; /* 右側に余白を追加 */
+  font-size: 24px; /* フォントサイズ */
+  font-weight: 300; /* 太さ */
+  letter-spacing: 0.04em; /* 文字間隔調整 */
+  margin-left: 18px;
+}
+/* フッターロゴのスタイル */
+.footer-logo-image {
+  height: 60px; /* ロゴの高さを指定 */
+  margin-right: 24px; /* ロゴと隣接要素の間に余白 */
+}
+.footer-logo-text {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* 中央揃え */
+  text-align: center; /* テキストを中央揃え */
+  line-height: 1.2;
 }
 /* フッターセクションの見出し（h2）のスタイル */
 .footer-section h2 {
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
   font-size: 32px; /* 見出しのフォントサイズ */
-  font-weight: 700; /* 太字 */
+  font-weight: 400; /* 太字 */
   margin-top: 18px; /* 上部に余白 */
   margin-bottom: 15px; /* 下部に余白 */
   display: inline-block; /* インラインブロック要素として配置 */
 }
 /* フッターセクションのサブ見出し（h3）のスタイル */
 .footer-section h3 {
-  font-size: 32px; /* サブ見出しのフォントサイズ */
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
+  font-size: 24px; /* サブ見出しのフォントサイズ */
   margin-right: 46px; /* 右側に余白 */
   margin-bottom: 14px; /* 下部に余白 */
 }
@@ -716,7 +742,8 @@ footer {
 }
 /* リンクの基本スタイル */
 .footer-section li a {
-  font-size: 20px; /* フォントサイズ */
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
+  font-size: 24px; /* フォントサイズ */
   position: relative; /* アニメーション用の相対位置 */
   color: #333; /* 通常時の文字色 */
   text-decoration: none; /* 下線を非表示に */
@@ -745,10 +772,12 @@ footer {
 }
 /* フッターのテキスト部分のスタイル */
 .footer-text {
-  margin-top: 110px; /* 上部に余白 */
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
+  margin-top: 150px; /* 上部に余白 */
   font-size: 24px; /* フォントサイズ */
 }
 .footer-text2 {
+  font-family: "Noto Sans JP", sans-serif; /* 日本語フォントを優先的に使用 */
   margin-top: 20px; /* 上部に余白 */
   font-size: 20px; /* フォントサイズ */
 }
@@ -793,3 +822,7 @@ footer {
     font-size: 14px; /* フォントサイズを小さく */
   }
 }
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */

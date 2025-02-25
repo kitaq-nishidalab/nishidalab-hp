@@ -9,239 +9,115 @@
     <!--リセットCSS-->
     <link rel="stylesheet" href="./css/reset.css" />
     <!--style.css-->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style_app.css" />
   </head>
 
   <!--Body-->
   <body>
-    <!--Header-->
-    <header class="header-top">
-      <div class="flex">
-        <a href="index.html" class="logo flex">
-          <img src="./images/nishidalab_logo.png" alt="" class="logo-image" />
-          <div>
-            西田健 研究室
-            <p class="times-new-roman">Takeshi Nishida Laboratory</p>
-          </div>
-        </a>
-        <a href="https://www.kitakyu-u.ac.jp/env/" class="logo2 flex">
-          <img
-            src="./images/University_logo (2).png"
-            alt=""
-            class="logo2-image"
-          />
-          <div>
-            北九州市立大学 国際環境工学部
-            <p class="">THE UNIVERSITY OF KITAKYUSHU</p>
-          </div>
-        </a>
-      </div>
-    </header>
-    <header class="header-bottom">
-      <div class="flex">
-        <nav>
-          <ul class="header_menu flex times-new-roman">
-            <li><a href="./research.html">研究内容</a></li>
-            <li><a href="./member.html">メンバー</a></li>
-            <li><a href="./results.html">研究成果</a></li>
-            <li><a href="./roboapp.html">ろぼあぷり</a></li>
-            <li><a href="./contact.html">お問い合わせ</a></li>
+    <!-- ヘッダー全体を囲む -->
+    <div class="header">
+      <!-- ヘッダートップ部分 -->
+      <header class="header-top">
+        <div class="flex">
+          <!-- 研究室ロゴリンク -->
+          <a href="index.html" class="logo flex">
+            <img src="./images/nishidalab_logo.png" alt="" class="logo-image" />
+            <div class="logo-text">
+              <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+              西田健研究室
+            </div>
+          </a>
+        </div>
+      </header>
+      <!-- ヘッダーボトム部分 -->
+      <header class="header-bottom">
+        <div class="flex">
+          <nav>
+            <!-- メニューナビゲーション -->
+            <ul class="header_menu flex">
+              <li><a href="./index.html">トップ</a></li>
+              <li><a href="./research.html">研究内容</a></li>
+              <li><a href="./member.html">メンバー</a></li>
+              <li><a href="./results.html">研究成果</a></li>
+              <li><a href="./roboapp.html">ろぼあぷり</a></li>
+              <li><a href="./contact.html">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- スマートフォン用のドロワーメニュー -->
+      <div class="drawer">
+        <!-- チェックボックスを用いてメニューを制御 -->
+        <input type="checkbox" id="drawer-check" class="drawer-hidden" />
+        <label for="drawer-check" class="drawer-open">
+          <span> </span>
+        </label>
+        <nav class="drawer-content">
+          <ul class="drawer-list">
+            <li class="drawer-item"><a href="./index.html">トップ</a></li>
+            <li class="drawer-item"><a href="./research.html">研究内容</a></li>
+            <li class="drawer-item"><a href="./member.html">メンバー</a></li>
+            <li class="drawer-item"><a href="./results.html">研究成果</a></li>
+            <li class="drawer-item"><a href="./roboapp.html">ろぼあぷり</a></li>
+            <li class="drawer-item">
+              <a href="./contact.html">お問い合わせ</a>
+            </li>
           </ul>
         </nav>
       </div>
-    </header>
+    </div>
     <!--Main-->
     <main>
       <!--Hero area-->
-      <section id="hero_roboapp" class="">
-        <div class="hero_inner">
-          <p class="times-new-roman">
-            Realizing Robots that Work Alternately with Humans
-          </p>
-          <h1 class="times-new-roman">株式会社</h1>
+      <section id="hero">
+        <div class="flex hero-header">
+          <!-- 研究室ロゴリンク -->
+          <a href="roboapp.html" class="hero-logo logo-flex">
+            <img src="./images/company_46dp.png" alt="" class="hero-logo-img" />
+            <div>COMPANY</div>
+          </a>
+          <a
+            href="http://www.roboappli.com/index.html"
+            class="hero-logo-sub logo-flex"
+          >
+            <img src="./images/outlink.png" alt="" class="logo-image-sub" />
+            <div>株式会社ろぼあぷり</div>
+          </a>
+        </div>
+        <div class="hero-container">
+          <img
+            src="./images/roboapp_img.jpg"
+            alt="ロボットアプリ"
+            class="hero-img"
+          />
+          <div class="hero-text">
+            株式会社ろぼあぷり
+
+            <p>​ロボット技術を社会実装する</p>
+            <p>北九州市立大学発スタートアップです</p>
+          </div>
         </div>
       </section>
       <!--Introduction-->
-      <section id="introduction" class="container">
-        <!-- <div class="heading">Reversible automation</div> -->
-        <h2 class="title-intro">Welcome</h2>
-        <div class="flex">
-          <div class="column-48">
-            <p class="text">
-              多品種製造行程の自動化のために,
-              工程変更に応じて作業者と自動機の速やかな置換が可能な「
-              <strong
-                >可逆な自動化：リバーシブル・オートメーション（RA：reversible
-                automation）</strong
-              >
-              」を提案しています.
-            </p>
-            <p class="text">
-              <strong>RA</strong>
-              を実現するために特に重要な七つの技術要素に焦点を当てて研究しています.
-            </p>
-            <p class="text-keyword">七つの技術要素</p>
-            <div class="keyword-box">協働ロボット</div>
-            <div class="keyword-box">グリッパ</div>
-            <div class="keyword-box">ケーブル艤装</div>
-            <div class="keyword-box">三次元計測</div>
-            <div class="keyword-box">動作計画</div>
-            <div class="keyword-box">リスクアセスメント</div>
-            <div class="keyword-box">無線通信</div>
-          </div>
-          <img
-            src="./images/ロボット野菜ピッキング.jpg"
-            alt=""
-            width="390"
-            height="500"
-          />
-        </div>
-      </section>
-      <!--news-->
-      <section id="top-news" class="container top-news-area times-new-roman">
-        <div class="title-news">
-          <h2>News</h2>
-        </div>
-        <div class="top-news-tabs">
-          <input id="all" type="radio" name="tab-item" checked />
-          <label class="tab-item all" for="all"> 新着情報 </label>
-          <input id="news" type="radio" name="tab-item" />
-          <label class="tab-item news" for="news"> お知らせ </label>
-          <input id="event" type="radio" name="tab-item" />
-          <label class="tab-item event" for="event"> イベント </label>
-          <div class="tab-content" id="all-content">
-            <ul class="top-news-list">
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-content" id="news-content">
-            <ul class="top-news-list">
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-content" id="event-content">
-            <ul class="top-news-list">
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
     </main>
-    <!--Footer-->
+    <!-- フッター -->
     <footer>
       <div class="footer-container times-new-roman">
         <div class="footer-section">
-          <img src="./images/nishidalab_logo.png" alt="" class="footer-logo" />
-          <div>
-            <h2>西田健 研究室</h2>
-            <p>Takeshi Nishida Laboratory</p>
+          <img
+            src="./images/nishidalab_logo.png"
+            alt=""
+            class="footer-logo-image"
+          />
+          <div class="footer-logo-text">
+            <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+            西田健研究室
           </div>
         </div>
-        <!-- NEWS Categories -->
+        <!-- メニューナビゲーション -->
         <div class="footer-section">
-          <h3>Menu</h3>
           <ul>
+            <li><a href="./index.html">トップ</a></li>
             <li><a href="./research.html">研究内容</a></li>
             <li><a href="./member.html">メンバー</a></li>
             <li><a href="./results.html">研究成果</a></li>

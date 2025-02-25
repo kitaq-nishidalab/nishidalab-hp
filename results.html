@@ -9,239 +9,225 @@
     <!--リセットCSS-->
     <link rel="stylesheet" href="./css/reset.css" />
     <!--style.css-->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style_results.css" />
   </head>
 
   <!--Body-->
   <body>
-    <!--Header-->
-    <header class="header-top">
-      <div class="flex">
-        <a href="index.html" class="logo flex">
-          <img src="./images/nishidalab_logo.png" alt="" class="logo-image" />
-          <div>
-            西田健 研究室
-            <p class="times-new-roman">Takeshi Nishida Laboratory</p>
-          </div>
-        </a>
-        <a href="https://www.kitakyu-u.ac.jp/env/" class="logo2 flex">
-          <img
-            src="./images/University_logo (2).png"
-            alt=""
-            class="logo2-image"
-          />
-          <div>
-            北九州市立大学 国際環境工学部
-            <p class="">THE UNIVERSITY OF KITAKYUSHU</p>
-          </div>
-        </a>
-      </div>
-    </header>
-    <header class="header-bottom">
-      <div class="flex">
-        <nav>
-          <ul class="header_menu flex times-new-roman">
-            <li><a href="./research.html">研究内容</a></li>
-            <li><a href="./member.html">メンバー</a></li>
-            <li><a href="./results.html">研究成果</a></li>
-            <li><a href="./roboapp.html">ろぼあぷり</a></li>
-            <li><a href="./contact.html">お問い合わせ</a></li>
+    <!-- ヘッダー全体を囲む -->
+    <div class="header">
+      <!-- ヘッダートップ部分 -->
+      <header class="header-top">
+        <div class="flex">
+          <!-- 研究室ロゴリンク -->
+          <a href="index.html" class="logo flex">
+            <img src="./images/nishidalab_logo.png" alt="" class="logo-image" />
+            <div class="logo-text">
+              <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+              西田健研究室
+            </div>
+          </a>
+        </div>
+      </header>
+      <!-- ヘッダーボトム部分 -->
+      <header class="header-bottom">
+        <div class="flex">
+          <nav>
+            <!-- メニューナビゲーション -->
+            <ul class="header_menu flex">
+              <li><a href="./index.html">トップ</a></li>
+              <li><a href="./research.html">研究内容</a></li>
+              <li><a href="./member.html">メンバー</a></li>
+              <li><a href="./results.html">研究成果</a></li>
+              <li><a href="./roboapp.html">ろぼあぷり</a></li>
+              <li><a href="./contact.html">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- スマートフォン用のドロワーメニュー -->
+      <div class="drawer">
+        <!-- チェックボックスを用いてメニューを制御 -->
+        <input type="checkbox" id="drawer-check" class="drawer-hidden" />
+        <label for="drawer-check" class="drawer-open">
+          <span> </span>
+        </label>
+        <nav class="drawer-content">
+          <ul class="drawer-list">
+            <li class="drawer-item"><a href="./index.html">トップ</a></li>
+            <li class="drawer-item"><a href="./research.html">研究内容</a></li>
+            <li class="drawer-item"><a href="./member.html">メンバー</a></li>
+            <li class="drawer-item"><a href="./results.html">研究成果</a></li>
+            <li class="drawer-item"><a href="./roboapp.html">ろぼあぷり</a></li>
+            <li class="drawer-item">
+              <a href="./contact.html">お問い合わせ</a>
+            </li>
           </ul>
         </nav>
       </div>
-    </header>
+    </div>
     <!--Main-->
     <main>
       <!--Hero area-->
-      <section id="hero" class="">
-        <div class="hero_inner">
-          <p class="times-new-roman">
-            Realizing Robots that Work Alternately with Humans
+      <section id="hero">
+        <div class="flex hero-header">
+          <!-- 研究室ロゴリンク -->
+          <a href="results.html" class="hero-logo logo-flex">
+            <img src="./images/docs_46dp.png" alt="" class="hero-logo-img" />
+            <div>PUBLICATIONS</div>
+          </a>
+        </div>
+      </section>
+      <!-- フィルターボタン -->
+      <div class="filter-buttons">
+        <button onclick="filterPapers('all')">すべて</button>
+        <button onclick="filterPapers('journal')">ジャーナル</button>
+        <button onclick="filterPapers('conference')">国際会議</button>
+        <button onclick="filterPapers('domestic')">国内会議</button>
+      </div>
+
+      <!-- 研究成果リスト -->
+      <section id="papers">
+        <div class="paper journal fade-in">
+          <h3>
+            ランダムサンプリング法を用いて訓練するニューラルネットワークによる多関節ロボットのパス生成
+          </h3>
+          <p><strong>著者:</strong> KIM MINJE, 渡辺 翼, 西田 健</p>
+          <p><strong>発表:</strong> 日本ロボット学会論文誌, 2025</p>
+          <a
+            href="https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202402296455601197"
+            class
+          >
+            [参考リンク]
+          </a>
+        </div>
+
+        <div class="paper conference fade-in">
+          <h3>
+            Enhanced 3D Object Posture Estimation for Incomplete Point Clouds
+            Using Fast Pattern Matching Technique
+          </h3>
+          <p><strong>著者:</strong> Yu Iwai, Kazuki Sato, Takeshi Nishida</p>
+          <p><strong>発表:</strong> SICE FES 2024</p>
+          <a href="https://ieeexplore.ieee.org/document/10805146" class>
+            [参考リンク]
+          </a>
+        </div>
+
+        <div class="paper conference fade-in">
+          <h3>
+            Path Encoding and Decoding for Articulated Robots via Information
+            Extraction
+          </h3>
+          <p><strong>著者:</strong> Takeshi Nishida, Tsubasa Watanabe</p>
+          <p><strong>発表:</strong> SICE FES 2024</p>
+          <a href="https://ieeexplore.ieee.org/document/10804887" class>
+            [参考リンク]
+          </a>
+        </div>
+
+        <div class="paper conference fade-in">
+          <h3>
+            State Machine for Dynamic Path Planning on Autonomous Articulated
+            Robots
+          </h3>
+          <p>
+            <strong>著者:</strong> Soma Fumoto, Tsubasa Watanabe, Takeshi
+            Nishida
           </p>
-          <h1 class="times-new-roman">人と交代で勤務するロボットの実現</h1>
+          <p><strong>発表:</strong> AROB 2025</p>
+          <a
+            href="https://www.researchgate.net/publication/388860920_State_Machine_for_Dynamic_Path_Planning_on_Autonomous_Articulated_Robots"
+            class
+          >
+            [参考リンク]
+          </a>
         </div>
-      </section>
-      <!--Introduction-->
-      <section id="introduction" class="container">
-        <!-- <div class="heading">Reversible automation</div> -->
-        <h2 class="title-intro">Welcome</h2>
-        <div class="flex">
-          <div class="column-48">
-            <p class="text">
-              多品種製造行程の自動化のために,
-              工程変更に応じて作業者と自動機の速やかな置換が可能な「
-              <strong
-                >可逆な自動化：リバーシブル・オートメーション（RA：reversible
-                automation）</strong
-              >
-              」を提案しています.
-            </p>
-            <p class="text">
-              <strong>RA</strong>
-              を実現するために特に重要な七つの技術要素に焦点を当てて研究しています.
-            </p>
-            <p class="text-keyword">七つの技術要素</p>
-            <div class="keyword-box">協働ロボット</div>
-            <div class="keyword-box">グリッパ</div>
-            <div class="keyword-box">ケーブル艤装</div>
-            <div class="keyword-box">三次元計測</div>
-            <div class="keyword-box">動作計画</div>
-            <div class="keyword-box">リスクアセスメント</div>
-            <div class="keyword-box">無線通信</div>
-          </div>
-          <img
-            src="./images/ロボット野菜ピッキング.jpg"
-            alt=""
-            width="390"
-            height="500"
-          />
+
+        <div class="paper conference fade-in">
+          <h3>
+            Integration of MaskNet-Based Posture Estimation into Robot Vision
+            Systems
+          </h3>
+          <p><strong>著者:</strong> Yu Iwai, Soma Fumoto, Takeshi Nishida</p>
+          <p><strong>発表:</strong> AROB 2025</p>
+          <a
+            href="https://www.researchgate.net/publication/388860828_Integration_of_MaskNet-Based_Posture_Estimation_into_Robot_Vision_Systems"
+            class
+          >
+            [参考リンク]
+          </a>
         </div>
-      </section>
-      <!--news-->
-      <section id="top-news" class="container top-news-area times-new-roman">
-        <div class="title-news">
-          <h2>News</h2>
+
+        <div class="paper conference fade-in">
+          <h3>
+            Enhancing Agent Operational Efficiency in Automated Warehouses
+            Through Wider Aisles
+          </h3>
+          <p>
+            <strong>著者:</strong> Mayo Suzuka, Takeshi Nishida, Masaaki
+            Nagahara
+          </p>
+          <p><strong>発表:</strong> AROB 2024</p>
+          <a
+            href="https://www.researchgate.net/publication/377729542_Enhancing_Agent_Operational_Efficiency_in_Automated_Warehouses_Through_Wider_Aisles"
+            class
+          >
+            [参考リンク]
+          </a>
         </div>
-        <div class="top-news-tabs">
-          <input id="all" type="radio" name="tab-item" checked />
-          <label class="tab-item all" for="all"> 新着情報 </label>
-          <input id="news" type="radio" name="tab-item" />
-          <label class="tab-item news" for="news"> お知らせ </label>
-          <input id="event" type="radio" name="tab-item" />
-          <label class="tab-item event" for="event"> イベント </label>
-          <div class="tab-content" id="all-content">
-            <ul class="top-news-list">
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-content" id="news-content">
-            <ul class="top-news-list">
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-19T10:30:58+09:00">2024.12.19</time>
-                  </div>
-                  <div class="top-news-list-category category-news">
-                    お知らせ
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-content" id="event-content">
-            <ul class="top-news-list">
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank">
-                  <div class="top-news-list-date">
-                    <time datetime="2024-12-18T10:05:37+09:00">2024.12.18</time>
-                  </div>
-                  <div class="top-news-list-category category-event">
-                    イベント
-                  </div>
-                  <div class="top-news-list-title">
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
+
+        <div class="paper domestic fade-in">
+          <h3>多関節ロボットのパスシードの展開と修正</h3>
+          <p><strong>著者:</strong> 渡辺 翼, 麓 宗馬, 西田 健</p>
+          <p><strong>発表:</strong> 日本ロボット学会 2024</p>
+          <a
+            href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202402234084570749"
+            class
+          >
+            [参考リンク]
+          </a>
         </div>
+
+        <div class="paper domestic fade-in">
+          <h3>Instant-ngpによる複数カメラのキャリブレーション</h3>
+          <p><strong>著者:</strong> 谷口 右京, 西田 健</p>
+          <p><strong>発表:</strong> SI 2023</p>
+        </div>
+
+        <div class="paper domestic fade-in">
+          <h3>多関節ロボットのパスの情報抽出手法の実装と評価</h3>
+          <p><strong>著者:</strong> 渡辺 翼, 西田 健</p>
+          <p><strong>発表:</strong> SI 2023</p>
+        </div>
+
+        <div class="paper domestic fade-in">
+          <h3>多関節ロボットのパスのエンコードとデコード</h3>
+          <p><strong>著者:</strong> 西田 健</p>
+          <p><strong>発表:</strong> SI 2023</p>
+        </div>
+
+        <!-- 他の研究成果も追加 -->
       </section>
     </main>
-    <!--Footer-->
+    <!-- フッター -->
     <footer>
       <div class="footer-container times-new-roman">
         <div class="footer-section">
-          <img src="./images/nishidalab_logo.png" alt="" class="footer-logo" />
-          <div>
-            <h2>西田健 研究室</h2>
-            <p>Takeshi Nishida Laboratory</p>
+          <img
+            src="./images/nishidalab_logo.png"
+            alt=""
+            class="footer-logo-image"
+          />
+          <div class="footer-logo-text">
+            <span style="color: rgb(255, 178, 8)">北九州市立大学</span>
+            西田健研究室
           </div>
         </div>
-        <!-- NEWS Categories -->
+        <!-- メニューナビゲーション -->
         <div class="footer-section">
-          <h3>Menu</h3>
           <ul>
+            <li><a href="./index.html">トップ</a></li>
             <li><a href="./research.html">研究内容</a></li>
             <li><a href="./member.html">メンバー</a></li>
             <li><a href="./results.html">研究成果</a></li>
@@ -264,5 +250,7 @@
         </div>
       </div>
     </footer>
+    <script src="scripts/filter_search_results.js"></script>
+    <script src="scripts/add_listener_results.js"></script>
   </body>
 </html>
