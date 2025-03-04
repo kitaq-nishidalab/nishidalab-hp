@@ -10,14 +10,6 @@ html {
 .times-new-roman {
   font-family: "Times New Roman", serif; /* Times New Romanフォント */
 }
-/* コンテナスタイル */
-.container {
-  width: 90%; /* 全体幅の90%を使用 */
-  max-width: 1120px; /* 最大幅1120px */
-  /* background-color: green; コメントアウトされた背景色 */
-  margin: 0 auto; /* 水平中央揃え */
-  position: relative; /* 相対位置を指定 */
-}
 /* Flexboxの基本設定 */
 .flex {
   display: flex; /* Flexboxを有効化 */
@@ -126,11 +118,11 @@ header {
 }
 /* ------ スマホ向けドロワーメニュー設定 ------ */
 /* ドロワーメニューの基本スタイル */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .drawer {
     width: 55px; /* ドロワーボタンの幅 */
     height: 70px; /* ドロワーボタンの高さ */
-    position: fixed; /* 固定表示 */
+    position: absolute; /* 固定表示 */
     top: 19px; /* 上端からの距離 */
     right: 12px; /* 右端からの距離 */
     z-index: 200; /* 他要素より前面に表示 */
@@ -161,8 +153,8 @@ input {
 /* ドロワーボタンのスタイル */
 .drawer-open {
   display: flex; /* フレックスボックスで配置 */
-  height: 40px; /* 高さを指定 */
-  width: 60px; /* 幅を指定 */
+  height: 25px; /* 高さを指定 */
+  width: 30px; /* 幅を指定 */
   justify-content: center; /* 中央揃え */
   align-items: center; /* 縦方向中央揃え */
   position: relative; /* 相対位置指定 */
@@ -172,6 +164,7 @@ input {
 /* ドロワーメニューのコンテンツ */
 .drawer-content {
   color: #ffff; /* テキスト色を白に設定 */
+  line-height: 2.5; /* 行間を～倍に設定 */
   justify-content: center; /* 中央揃え */
   align-items: center; /* 縦方向中央揃え */
   font-size: 32px; /* フォントサイズ */
@@ -185,37 +178,58 @@ input {
   transition: 0.5s; /* アニメーション効果 */
   opacity: 0.9; /* 半透明 */
 }
+.drawer-list {
+  margin-left: 32px;
+}
 /* チェック状態の切り替えによるドロワー表示 */
 #drawer-check:checked ~ .drawer-content {
   left: 0; /* メニューを画面内に表示 */
   transition: 0.5s ease-in-out; /* アニメーションを適用 */
 }
-/* ドロワーボタンのスパンスタイル */
-.drawer-open span {
-  display: block; /* ブロック要素に設定 */
-  width: 30px; /* 幅 */
-  height: 3px; /* 高さ */
-  background-color: black; /* 色 */
-  position: relative; /* 相対位置指定 */
-}
-/* ドロワーボタンのバーを上下に配置 */
-.drawer-open span::before,
-.drawer-open span::after {
-  content: ""; /* 空の内容 */
-  display: block; /* ブロック要素に設定 */
-  width: 30px; /* 幅 */
-  height: 3px; /* 高さ */
-  background-color: black; /* 色 */
-  position: absolute; /* 絶対位置指定 */
-}
-.drawer-open span::before {
-  top: -10px; /* 上のバーを上に配置 */
-}
-.drawer-open span::after {
-  top: 10px; /* 下のバーを下に配置 */
-}
 .drawer-hidden {
   display: none; /*チェックボックスの非表示 */
+}
+.menu-icon {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.drawer-open .menu-icon div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transition: 0.3s;
+  transform-origin: center; /* 回転の基準を中心に */
+}
+/* 3本線の配置 */
+.drawer-open .menu-icon div:nth-child(1) {
+  top: 0;
+}
+.drawer-open .menu-icon div:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.drawer-open .menu-icon div:nth-child(3) {
+  bottom: 0;
+}
+/* バツ印に変形 */
+#drawer-check:checked ~ .drawer-open .menu-icon div:nth-child(1) {
+  background-color: white;
+  transform: rotate(45deg);
+  top: 45%;
+}
+#drawer-check:checked ~ .drawer-open .menu-icon div:nth-child(2) {
+  background-color: white;
+  opacity: 0;
+}
+#drawer-check:checked ~ .drawer-open .menu-icon div:nth-child(3) {
+  background-color: white;
+  transform: rotate(-45deg);
+  bottom: 45%;
 }
 /* ------ ロゴ部分のスタイル ------ */
 /* 研究室ロゴ */
@@ -339,6 +353,53 @@ input {
 @media (max-width: 895px) {
   .hero-logo {
     font-size: 28px;
+  }
+}
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* --------------------------------- */
+/* ------研究内容セクション ------ */
+/* カラム（左右に分ける要素）のスタイル */
+.column-contact {
+  width: 47.5%; /* カラムの幅を全体の50%に設定 */
+}
+/* テキスト部分のスタイル */
+.text {
+  font-family: "Noto Sans JP", serif; /* フォント設定 */
+  font-size: 18px; /* フォントサイズ */
+  line-height: 1.8; /* 行間を1.8倍に設定 */
+  margin-bottom: 10px; /* 各段落の下に余白を追加 */
+}
+.map-container {
+  width: 45%; /* コンテナの幅を100%にする */
+  max-width: 600px; /* 最大幅を指定して大きくなりすぎないようにする */
+  height: auto; /* 高さは自動調整 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+/* レスポンシブデザイン: スマホ向け設定 */
+/* 画面幅が867px以下の場合のスタイル調整 */
+@media (max-width: 885px) {
+  .map-container {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+  /* カラム（左右に分ける要素）のスタイル */
+  .column-contact {
+    width: 95%; /* カラムの幅を全体の50%に設定 */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+  .text {
+    font-size: 18px; /* フォントサイズ */
+    line-height: 1.2; /* 行間を1.8倍に設定 */
+    margin-bottom: 8px; /* 各段落の下に余白を追加 */
   }
 }
 /* --------------------------------- */

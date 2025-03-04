@@ -127,11 +127,11 @@ header {
 
 /* ------ スマホ向けドロワーメニュー設定 ------ */
 /* ドロワーメニューの基本スタイル */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 885px) {
   .drawer {
     width: 55px; /* ドロワーボタンの幅 */
     height: 70px; /* ドロワーボタンの高さ */
-    position: fixed; /* 固定表示 */
+    position: absolute; /* 固定表示 */
     top: 19px; /* 上端からの距離 */
     right: 12px; /* 右端からの距離 */
     z-index: 200; /* 他要素より前面に表示 */
@@ -162,8 +162,8 @@ input {
 /* ドロワーボタンのスタイル */
 .drawer-open {
   display: flex; /* フレックスボックスで配置 */
-  height: 40px; /* 高さを指定 */
-  width: 60px; /* 幅を指定 */
+  height: 25px; /* 高さを指定 */
+  width: 30px; /* 幅を指定 */
   justify-content: center; /* 中央揃え */
   align-items: center; /* 縦方向中央揃え */
   position: relative; /* 相対位置指定 */
@@ -173,6 +173,7 @@ input {
 /* ドロワーメニューのコンテンツ */
 .drawer-content {
   color: #ffff; /* テキスト色を白に設定 */
+  line-height: 2.5; /* 行間を～倍に設定 */
   justify-content: center; /* 中央揃え */
   align-items: center; /* 縦方向中央揃え */
   font-size: 32px; /* フォントサイズ */
@@ -186,39 +187,59 @@ input {
   transition: 0.5s; /* アニメーション効果 */
   opacity: 0.9; /* 半透明 */
 }
+.drawer-list {
+  margin-left: 32px;
+}
 /* チェック状態の切り替えによるドロワー表示 */
 #drawer-check:checked ~ .drawer-content {
   left: 0; /* メニューを画面内に表示 */
   transition: 0.5s ease-in-out; /* アニメーションを適用 */
 }
-/* ドロワーボタンのスパンスタイル */
-.drawer-open span {
-  display: block; /* ブロック要素に設定 */
-  width: 30px; /* 幅 */
-  height: 3px; /* 高さ */
-  background-color: black; /* 色 */
-  position: relative; /* 相対位置指定 */
-}
-/* ドロワーボタンのバーを上下に配置 */
-.drawer-open span::before,
-.drawer-open span::after {
-  content: ""; /* 空の内容 */
-  display: block; /* ブロック要素に設定 */
-  width: 30px; /* 幅 */
-  height: 3px; /* 高さ */
-  background-color: black; /* 色 */
-  position: absolute; /* 絶対位置指定 */
-}
-.drawer-open span::before {
-  top: -10px; /* 上のバーを上に配置 */
-}
-.drawer-open span::after {
-  top: 10px; /* 下のバーを下に配置 */
-}
 .drawer-hidden {
   display: none; /*チェックボックスの非表示 */
 }
-
+.menu-icon {
+  width: 20px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.drawer-open .menu-icon div {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  transition: 0.3s;
+  transform-origin: center; /* 回転の基準を中心に */
+}
+/* 3本線の配置 */
+.drawer-open .menu-icon div:nth-child(1) {
+  top: 0;
+}
+.drawer-open .menu-icon div:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.drawer-open .menu-icon div:nth-child(3) {
+  bottom: 0;
+}
+/* バツ印に変形 */
+#drawer-check:checked ~ .drawer-open .menu-icon div:nth-child(1) {
+  background-color: white;
+  transform: rotate(45deg);
+  top: 45%;
+}
+#drawer-check:checked ~ .drawer-open .menu-icon div:nth-child(2) {
+  background-color: white;
+  opacity: 0;
+}
+#drawer-check:checked ~ .drawer-open .menu-icon div:nth-child(3) {
+  background-color: white;
+  transform: rotate(-45deg);
+  bottom: 45%;
+}
 /* ------ ロゴ部分のスタイル ------ */
 /* 研究室ロゴ */
 .logo {
