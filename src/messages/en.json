@@ -1,0 +1,22 @@
+{
+  "title": "Hello World",
+  "description": {
+    "author": "Taro Yamada",
+    "date": "2025-01-01",
+    "content": "This is a test message"
+  },
+  "language": {
+    "toggle": "Switch Language",
+    "current": "Current Language: {locale}"
+  },
+  "nav": {
+    "labName": "Nishida Lab",
+    "home": "Home",
+    "research": "Research",
+    "members": "Members",
+    "publications": "Publications",
+    "contact": "Contact",
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  }
+}

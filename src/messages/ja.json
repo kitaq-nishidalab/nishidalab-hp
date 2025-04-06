@@ -1,0 +1,22 @@
+{
+  "title": "こんにちは世界",
+  "description": {
+    "author": "山田太郎",
+    "date": "2025-01-01",
+    "content": "これはテストメッセージです"
+  },
+  "language": {
+    "toggle": "言語を切り替える",
+    "current": "現在の言語: {locale}"
+  },
+  "nav": {
+    "labName": "西田健研究室",
+    "home": "トップ",
+    "research": "研究内容",
+    "members": "メンバー",
+    "publications": "研究業績",
+    "contact": "お問い合わせ",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる"
+  }
+}
