@@ -15,5 +15,10 @@
   },
   "carousel": {
     "title": "人と交代で勤務するロボットの実現"
+  },
+  "member": {
+    "staffTitle": "教員",
+    "staffPosition": "教授",
+    "studentsTitle": "学生"
   }
 }

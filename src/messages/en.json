@@ -15,5 +15,10 @@
   },
   "carousel": {
     "title": "Realization of a Robot that Works in Turns with Humans"
+  },
+  "member": {
+    "staffTitle": "Staff",
+    "staffPosition": "Professor",
+    "studentsTitle": "Students"
   }
 }
