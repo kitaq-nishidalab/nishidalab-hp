@@ -1,3 +1,4 @@
+import FullScreenCarousel from "@/features/routes/home/components/FullScreenCarousel";
 import { routing } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -27,12 +28,12 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
 
+  const images = ["/lab.jpg", "/robot_lab.png", "/campus.jpg"];
+  const text = t("carousel.title");
+
   return (
     <div>
-      <h1>{t("title")}</h1>
-      <p>{t("description.author")}</p>
-      <p>{t("description.date")}</p>
-      <p>{t("description.content")}</p>
+      <FullScreenCarousel images={images} text={text} />
     </div>
   );
 }

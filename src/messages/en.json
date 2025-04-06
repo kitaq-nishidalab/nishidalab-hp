@@ -1,15 +1,9 @@
 {
-  "title": "Hello World",
-  "description": {
-    "author": "Taro Yamada",
-    "date": "2025-01-01",
-    "content": "This is a test message"
-  },
   "language": {
     "toggle": "Switch Language",
     "current": "Current Language: {locale}"
   },
-  "nav": {
+  "header": {
     "labName": "Nishida Lab",
     "home": "Home",
     "research": "Research",
@@ -18,5 +12,8 @@
     "contact": "Contact",
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
+  },
+  "carousel": {
+    "title": "Realization of a Robot that Works in Turns with Humans"
   }
 }
