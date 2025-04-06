@@ -87,8 +87,8 @@ export default function Header() {
 
         {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
-          <nav className="mt-4 border-t border-gray-100 pt-4 lg:hidden">
-            <ul className="grid gap-3 pb-4">
+          <nav className="lg:hidden my-1">
+            <ul className="grid gap-1">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
