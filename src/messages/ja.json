@@ -22,5 +22,23 @@
     "studentsTitle": "学生",
     "professorName": "西田 健",
     "professorBio": "2002年，九州工業大学博士（工学）．2002年，九州工業大学 助教．2013年，九州工業大学 准教授．2018年，LORIA研究所 客員研究員．2018年，サレント大学 客員研究員．2019年，KiQ Robotics（株）取締役．2020年，九州工業大学 特任教授．2021年，Nishida Lab 代表．2022年，北九州市立大学 教授．2024年，（株）ろぼあぷり 代表取締役．"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "addressLabel": "住所",
+    "address": "〒808-0135 福岡県北九州市若松区ひびきの１−１",
+    "emailLabel": "メール",
+    "email": "example@example.com"
+  },
+  "publications": {
+    "title": "研究業績",
+    "filterByCategory": "カテゴリーで絞り込む",
+    "filterByYear": "年で絞り込む",
+    "all": "すべて",
+    "categories": {
+      "journal": "ジャーナル",
+      "conference": "国際会議",
+      "domestic": "国内会議"
+    }
   }
 }

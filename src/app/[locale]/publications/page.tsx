@@ -1,3 +1,51 @@
-export default function Publications() {
-  return <div className="">研究業績</div>;
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import rawPublications from "@/constants/publications.json";
+import PublicationList from "@/features/routes/publications/components/PublicationList";
+
+type Publication = {
+  title: string;
+  authors: string[];
+  category: string;
+  year: number;
+  venue: string;
+  link?: string;
+};
+
+export default async function PublicationsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale });
+
+  const publications: Publication[] = rawPublications;
+
+  const categories = [...new Set(publications.map((item) => item.category))];
+  const years = [...new Set(publications.map((item) => item.year))].sort(
+    (a, b) => b - a
+  );
+
+  const categoryLabels = {
+    journal: t("publications.categories.journal"),
+    conference: t("publications.categories.conference"),
+    domestic: t("publications.categories.domestic"),
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-4">{t("publications.title")}</h1>
+
+      <PublicationList
+        publications={publications}
+        categories={categories}
+        years={years}
+        labelAll={t("publications.all")}
+        labelCategory={t("publications.filterByCategory")}
+        labelYear={t("publications.filterByYear")}
+        categoryLabels={categoryLabels}
+      />
+    </div>
+  );
 }

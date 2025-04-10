@@ -1,0 +1,79 @@
+[
+  {
+    "title": "ランダムサンプリング法を用いて訓練するニューラルネットワークによる多関節ロボットのパス生成",
+    "authors": ["KIM MINJE", "渡辺 翼", "西田 健"],
+    "category": "journal",
+    "year": 2025,
+    "venue": "日本ロボット学会論文誌",
+    "link": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202402296455601197"
+  },
+  {
+    "title": "Enhanced 3D Object Posture Estimation for Incomplete Point Clouds Using Fast Pattern Matching Technique",
+    "authors": ["Yu Iwai", "Kazuki Sato", "Takeshi Nishida"],
+    "category": "conference",
+    "year": 2024,
+    "venue": "SICE FES 2024",
+    "link": "https://ieeexplore.ieee.org/document/10805146"
+  },
+  {
+    "title": "Path Encoding and Decoding for Articulated Robots via Information Extraction",
+    "authors": ["Takeshi Nishida", "Tsubasa Watanabe"],
+    "category": "conference",
+    "year": 2024,
+    "venue": "SICE FES 2024",
+    "link": "https://ieeexplore.ieee.org/document/10804887"
+  },
+  {
+    "title": "State Machine for Dynamic Path Planning on Autonomous Articulated Robots",
+    "authors": ["Soma Fumoto", "Tsubasa Watanabe", "Takeshi Nishida"],
+    "category": "conference",
+    "year": 2025,
+    "venue": "AROB 2025",
+    "link": "https://www.researchgate.net/publication/388860920_State_Machine_for_Dynamic_Path_Planning_on_Autonomous_Articulated_Robots"
+  },
+  {
+    "title": "Integration of MaskNet-Based Posture Estimation into Robot Vision Systems",
+    "authors": ["Yu Iwai", "Soma Fumoto", "Takeshi Nishida"],
+    "category": "conference",
+    "year": 2025,
+    "venue": "AROB 2025",
+    "link": "https://www.researchgate.net/publication/388860828_Integration_of_MaskNet-Based_Posture_Estimation_into_Robot_Vision_Systems"
+  },
+  {
+    "title": "Enhancing Agent Operational Efficiency in Automated Warehouses Through Wider Aisles",
+    "authors": ["Mayo Suzuka", "Takeshi Nishida", "Masaaki Nagahara"],
+    "category": "conference",
+    "year": 2024,
+    "venue": "AROB 2024",
+    "link": "https://www.researchgate.net/publication/377729542_Enhancing_Agent_Operational_Efficiency_in_Automated_Warehouses_Through_Wider_Aisles"
+  },
+  {
+    "title": "多関節ロボットのパスシードの展開と修正",
+    "authors": ["渡辺 翼", "麓 宗馬", "西田 健"],
+    "category": "domestic",
+    "year": 2024,
+    "venue": "日本ロボット学会",
+    "link": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202402234084570749"
+  },
+  {
+    "title": "Instant-ngpによる複数カメラのキャリブレーション",
+    "authors": ["谷口 右京", "西田 健"],
+    "category": "domestic",
+    "year": 2023,
+    "venue": "SI 2023"
+  },
+  {
+    "title": "多関節ロボットのパスの情報抽出手法の実装と評価",
+    "authors": ["渡辺 翼", "西田 健"],
+    "category": "domestic",
+    "year": 2023,
+    "venue": "SI 2023"
+  },
+  {
+    "title": "多関節ロボットのパスのエンコードとデコード",
+    "authors": ["西田 健"],
+    "category": "domestic",
+    "year": 2023,
+    "venue": "SI 2023"
+  }
+]

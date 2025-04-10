@@ -22,5 +22,23 @@
     "studentsTitle": "Students",
     "professorName": "Takeshi Nishida",
     "professorBio": "In 2002, received a Ph.D. in Engineering from Kyushu Institute of Technology. In 2002, became an Assistant Professor at Kyushu Institute of Technology. In 2013, became an Associate Professor at the same university. In 2018, served as a visiting researcher at LORIA and a visiting researcher at the University of Salento. In 2019, became a director of KiQ Robotics Inc. In 2020, became a specially appointed professor at Kyushu Institute of Technology. In 2021, founded Nishida Lab. In 2022, became a professor at the University of Kitakyushu. In 2024, became CEO of Roboappli Inc."
+  },
+  "contact": {
+    "title": "Contact",
+    "addressLabel": "Address",
+    "address": "1-1 Hibikino, Wakamatsu Ward, Kitakyushu, Fukuoka 808-0135",
+    "emailLabel": "Email",
+    "email": "example@example.com"
+  },
+  "publications": {
+    "title": "Publications",
+    "filterByCategory": "Filter by Category",
+    "filterByYear": "Filter by Year",
+    "all": "All",
+    "categories": {
+      "journal": "Journal",
+      "conference": "International Conference",
+      "domestic": "Domestic Conference"
+    }
   }
 }
