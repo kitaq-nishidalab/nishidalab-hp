@@ -1,6 +1,19 @@
 import { CenteredImageTitle } from "@/components/CenteredImageTitle";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return {
+    title: `${t("header.labName")} | ${t("header.contact")}`,
+  };
+}
+
 export default async function ContactPage({
   params,
 }: {

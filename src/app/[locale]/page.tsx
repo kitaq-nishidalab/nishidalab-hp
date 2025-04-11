@@ -6,18 +6,18 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: Promise<{ locale: string }>;
-// }) {
-//   const { locale } = await params;
-//   const t = await getTranslations({ locale });
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
-//   return {
-//     title: t("title"),
-//   };
-// }
+  return {
+    title: `${t("header.labName")} | ${t("header.home")}`,
+  };
+}
 
 export default async function HomePage({
   params,

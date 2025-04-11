@@ -3,6 +3,19 @@ import rawPublications from "@/constants/publications.json";
 import PublicationList from "@/features/routes/publications/components/PublicationList";
 import { CenteredImageTitle } from "@/components/CenteredImageTitle";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+
+  return {
+    title: `${t("header.labName")} | ${t("header.publications")}`,
+  };
+}
+
 type Publication = {
   title: string;
   authors: string[];
