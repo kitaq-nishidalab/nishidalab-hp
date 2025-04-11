@@ -17,6 +17,7 @@
     "title": "Realization of a Robot that Works in Turns with Humans"
   },
   "member": {
+    "title": "Members",
     "staffTitle": "Staff",
     "staffPosition": "Professor",
     "studentsTitle": "Students",
@@ -40,5 +41,8 @@
       "conference": "International Conference",
       "domestic": "Domestic Conference"
     }
+  },
+  "research": {
+    "title": "Research"
   }
 }

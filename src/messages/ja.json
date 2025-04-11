@@ -17,6 +17,7 @@
     "title": "人と交代で勤務するロボットの実現"
   },
   "member": {
+    "title": "メンバー",
     "staffTitle": "教員",
     "staffPosition": "教授",
     "studentsTitle": "学生",
@@ -40,5 +41,8 @@
       "conference": "国際会議",
       "domestic": "国内会議"
     }
+  },
+  "research": {
+    "title": "研究内容"
   }
 }
