@@ -20,7 +20,7 @@ export default function FullScreenCarousel({ images, text }: Props) {
   }, [images.length]);
 
   return (
-    <div className="relative lg:h-[calc(100vh-80px)] h-[calc(50vh-80px)]">
+    <div className="relative lg:h-[calc(70vh-80px)] h-[calc(50vh-80px)]">
       {images.map((img, index) => (
         <div
           key={index}

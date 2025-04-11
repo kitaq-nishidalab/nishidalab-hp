@@ -26,10 +26,11 @@
   },
   "contact": {
     "title": "お問い合わせ",
-    "addressLabel": "住所",
     "address": "〒808-0135 福岡県北九州市若松区ひびきの１−１",
-    "emailLabel": "メール",
-    "email": "example@example.com"
+    "email": "example@example.com",
+    "access": "アクセス",
+    "contact1": "共同研究依頼・取材依頼等",
+    "contact2": "西田研究室へ進学を希望する方"
   },
   "publications": {
     "title": "研究業績",

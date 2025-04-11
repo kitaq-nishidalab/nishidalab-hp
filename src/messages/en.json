@@ -26,10 +26,11 @@
   },
   "contact": {
     "title": "Contact",
-    "addressLabel": "Address",
     "address": "1-1 Hibikino, Wakamatsu Ward, Kitakyushu, Fukuoka 808-0135",
-    "emailLabel": "Email",
-    "email": "example@example.com"
+    "email": "example@example.com",
+    "access": "Access",
+    "contact1": "Inquiries for Joint Research and Interviews",
+    "contact2": "For those wishing to join Nishida Lab as students"
   },
   "publications": {
     "title": "Publications",
