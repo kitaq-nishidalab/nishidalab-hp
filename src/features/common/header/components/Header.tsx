@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
-      <div className="mx-auto px-4 py-3 lg:py-4">
+      <div className="py-4 px-3 md:px-16">
         <div className="flex items-center justify-between">
           {/* Left: Logo and Title */}
           <Link href="/" className="flex items-center space-x-3 group">
@@ -38,7 +38,9 @@ export default function Header() {
               height={100}
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <h1 className="text-lg font-bold lg:text-xl">{t("labName")}</h1>
+            <h1 className="text-lg font-bold tracking-widest lg:text-xl">
+              {t("labName")}
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,7 +50,7 @@ export default function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`relative py-2 text-gray-700 transition-colors hover:text-gray-900
+                    className={`relative py-1 transition-colors text-sm
                       after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left
                       after:scale-x-0 after:bg-gray-900 after:transition-transform after:duration-300
                       hover:after:scale-x-100
@@ -72,7 +74,7 @@ export default function Header() {
           <div className="flex items-center space-x-4 lg:hidden">
             <ToggleLanguage />
             <button
-              className="rounded-md bg-gray-100 p-2 text-gray-700 transition-colors hover:bg-gray-200"
+              className="rounded-md bg-gray-100 p-2 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? t("closeMenu") : t("openMenu")}
             >

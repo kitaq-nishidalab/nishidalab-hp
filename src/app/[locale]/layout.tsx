@@ -7,27 +7,14 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Noto_Sans_JP } from "next/font/google";
+
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "西田健研究室",
   description: "北九州市立大学 西田健研究室の公式ホームページです。",
 };
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="ja">
-//       <body>
-//         <Header />
-//         <main>{children}</main>
-//         <Footer />
-//       </body>
-//     </html>
-//   );
-// }
 
 export default async function RootLayout({
   children,
@@ -50,7 +37,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body className={notoSansJP.className}>
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>

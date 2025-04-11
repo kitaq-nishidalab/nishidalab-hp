@@ -8,32 +8,35 @@ export const ToggleLanguage = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  // 明示的に表示順を指定
   const locales = ["ja", "en"];
 
   const switchLocale = (newLocale: string) => {
+    if (newLocale === locale) return;
     const segments = pathname.split("/");
     segments[1] = newLocale;
     const newPath = segments.join("/");
     router.push(newPath);
   };
 
+  const getLabel = (loc: string) => (loc === "ja" ? "日本語" : "English");
+
   return (
-    <div className="flex items-center rounded-full bg-gray-100 p-1 text-xs md:text-sm">
-      {locales.map((loc) => (
-        <button
-          key={loc}
-          onClick={() => switchLocale(loc)}
-          disabled={loc === locale}
-          className={`rounded-full px-2 py-1 transition-all ${
-            loc === locale
-              ? "bg-white font-medium text-gray-800 shadow-sm"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
-          aria-label={`Switch to ${loc.toUpperCase()} language`}
-        >
-          {loc.toUpperCase()}
-        </button>
+    <div className="text-sm">
+      {locales.map((loc, index) => (
+        <span key={loc}>
+          {loc === locale ? (
+            <span className="font-bold">{getLabel(loc)}</span>
+          ) : (
+            <button
+              onClick={() => switchLocale(loc)}
+              className="hover:underline"
+              aria-label={`Switch to ${getLabel(loc)}`}
+            >
+              {getLabel(loc)}
+            </button>
+          )}
+          {index === 0 && " / "}
+        </span>
       ))}
     </div>
   );

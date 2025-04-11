@@ -5,7 +5,7 @@ import { FaFacebook, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white w-full p-6">
+    <footer className="bg-[#131415] text-white w-full p-6">
       <div className="flex items-center justify-center gap-6">
         <p className="text-xs md:text-sm text-center">
           © 2025 NishidaLab. All rights reserved.
