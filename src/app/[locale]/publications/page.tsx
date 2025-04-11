@@ -54,8 +54,6 @@ export default async function PublicationsPage({
         title={t("publications.title")}
       />
       <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-2xl font-bold mb-4">{t("publications.title")}</h1>
-
         <PublicationList
           publications={publications}
           categories={categories}

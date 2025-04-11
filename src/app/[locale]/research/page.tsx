@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CenteredImageTitle } from "@/components/CenteredImageTitle";
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -29,7 +30,37 @@ export default async function ResearchPage({
         imageUrl="/robot_obi.jpg"
         title={t("research.title")}
       />
-      <div className="max-w-4xl mx-auto">あああ</div>
+      <section className="px-4 py-8 max-w-4xl mx-auto space-y-12">
+        <div>
+          <h2 className="text-2xl font-bold mb-4">
+            {t("research.visionTitle")}
+          </h2>
+          <p className="text-base leading-relaxed">{t("research.vision")}</p>
+        </div>
+
+        {[
+          "pathPlanning",
+          "autonomousDriving",
+          "measurement3D",
+          "calibration",
+        ].map((key) => (
+          <div key={key} className="space-y-2">
+            <h3 className="text-xl font-semibold">
+              {t(`research.${key}.title`)}
+            </h3>
+            <Image
+              src={`/research/${key}.jpg`}
+              alt={t(`research.${key}.title`)}
+              width={800}
+              height={400}
+              className="rounded-lg w-full h-auto object-cover"
+            />
+            <p className="text-base leading-relaxed">
+              {t(`research.${key}.desc`)}
+            </p>
+          </div>
+        ))}
+      </section>
     </>
   );
 }
