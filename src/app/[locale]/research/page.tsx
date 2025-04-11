@@ -38,22 +38,17 @@ export default async function ResearchPage({
           <p className="text-base leading-relaxed">{t("research.vision")}</p>
         </div>
 
-        {[
-          "pathPlanning",
-          "autonomousDriving",
-          "measurement3D",
-          "calibration",
-        ].map((key) => (
+        {["pathPlanning", "measurement3D"].map((key) => (
           <div key={key} className="space-y-2">
             <h3 className="text-xl font-semibold">
               {t(`research.${key}.title`)}
             </h3>
             <Image
-              src={`/research/${key}.jpg`}
+              src={`/${key}.png`}
               alt={t(`research.${key}.title`)}
               width={800}
               height={400}
-              className="rounded-lg w-full h-auto object-cover"
+              className="w-full h-auto object-cover"
             />
             <p className="text-base leading-relaxed">
               {t(`research.${key}.desc`)}

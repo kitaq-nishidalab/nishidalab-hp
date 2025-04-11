@@ -50,17 +50,9 @@
       "title": "Path Planning",
       "desc": "We develop algorithms that enable robots to compute safe and efficient paths to destinations, including obstacle avoidance and dynamic environment adaptation."
     },
-    "autonomousDriving": {
-      "title": "Autonomous Driving",
-      "desc": "We research perception, decision-making, and control technologies for autonomous vehicles and mobile robots."
-    },
     "measurement3D": {
       "title": "3D Measurement",
       "desc": "We focus on techniques to acquire and process 3D spatial information using sensors like LiDAR and stereo cameras."
-    },
-    "calibration": {
-      "title": "Calibration",
-      "desc": "We study methods for improving the accuracy of robot sensors and actuators, including coordinate alignment and error correction."
     }
   }
 }
