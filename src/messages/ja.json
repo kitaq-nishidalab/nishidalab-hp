@@ -34,8 +34,8 @@
   },
   "publications": {
     "title": "研究業績",
-    "filterByCategory": "カテゴリーで絞り込む",
-    "filterByYear": "年で絞り込む",
+    "filterByCategory": "カテゴリー",
+    "filterByYear": "年",
     "all": "すべて",
     "categories": {
       "journal": "ジャーナル",

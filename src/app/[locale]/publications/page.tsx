@@ -53,7 +53,7 @@ export default async function PublicationsPage({
         imageUrl="/robot_obi.jpg"
         title={t("publications.title")}
       />
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-5xl mx-auto p-6">
         <PublicationList
           publications={publications}
           categories={categories}

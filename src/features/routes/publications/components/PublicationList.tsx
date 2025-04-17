@@ -42,13 +42,13 @@ export default function PublicationList({
 
   return (
     <div className="space-y-4">
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center text-xs">
         <label>
           {labelCategory}
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="border px-2 py-1 ml-2"
+            className="border p-1 ml-2 w-24"
           >
             <option value="all">{labelAll}</option>
             {categories.map((cat) => (
@@ -64,7 +64,7 @@ export default function PublicationList({
           <select
             value={selectedYear}
             onChange={(e) => setSelectedYear(e.target.value)}
-            className="border px-2 py-1 ml-2"
+            className="border p-1 ml-2 w-24"
           >
             <option value="all">{labelAll}</option>
             {years.map((year) => (
@@ -78,28 +78,31 @@ export default function PublicationList({
 
       <ul className="space-y-3">
         {filtered.map((item, index) => (
-          <li key={index} className="border p-3 rounded">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm text-gray-500">[{item.year}]</span>
-              <h2 className="font-semibold text-base">{item.title}</h2>
-              <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
-                {categoryLabels[item.category] || item.category}
-              </span>
-              {item.link && (
-                <Link
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline text-sm hover:opacity-80"
-                >
-                  参考リンク
-                </Link>
-              )}
+          <li key={index} className="border p-4 rounded">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs text-gray-700">{item.year}</span>
+                <span className="bg-blue-800 text-white text-xs px-3 py-1">
+                  {categoryLabels[item.category] || item.category}
+                </span>
+              </div>
+              <h2 className="font-semibold md:text-lg">{item.title}</h2>
+              <div className="gap-0 text-xs">
+                <div className="text-gray-700 flex items-center gap-2 flex-wrap">
+                  <span>{item.authors.join(", ")}</span>
+                </div>
+                <p className="text-gray-700">{item.venue}</p>
+                {item.link && (
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    className="text-blue-600 underline hover:opacity-80"
+                  >
+                    参考リンク
+                  </Link>
+                )}
+              </div>
             </div>
-            <div className="text-sm text-gray-600 flex items-center gap-2 flex-wrap mt-1">
-              <span>{item.authors.join(", ")}</span>
-            </div>
-            <p className="text-sm text-gray-500 mt-1 italic">{item.venue}</p>
           </li>
         ))}
       </ul>

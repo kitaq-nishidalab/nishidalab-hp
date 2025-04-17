@@ -4,7 +4,7 @@
     "current": "Current Language: {locale}"
   },
   "header": {
-    "labName": "Nishida Lab",
+    "labName": "Nishida Lab.",
     "home": "Home",
     "research": "Research",
     "members": "Members",
@@ -34,8 +34,8 @@
   },
   "publications": {
     "title": "Publications",
-    "filterByCategory": "Filter by Category",
-    "filterByYear": "Filter by Year",
+    "filterByCategory": "Category",
+    "filterByYear": "Year",
     "all": "All",
     "categories": {
       "journal": "Journal",

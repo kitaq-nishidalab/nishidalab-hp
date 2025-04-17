@@ -12,7 +12,7 @@ import { Noto_Sans_JP } from "next/font/google";
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
-  title: "西田健研究室",
+  title: "北九州市立大学 西田健研究室",
   description: "北九州市立大学 西田健研究室の公式ホームページです。",
 };
 
