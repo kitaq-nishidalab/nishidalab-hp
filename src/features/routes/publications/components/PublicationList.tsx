@@ -89,7 +89,7 @@ export default function PublicationList({
               <h2 className="font-semibold md:text-lg">{item.title}</h2>
               <div className="gap-0 text-xs">
                 <div className="text-gray-700 flex items-center gap-2 flex-wrap">
-                  <span>{item.authors.join(", ")}</span>
+                  <span>{item.authors.join(",  ")}</span>
                 </div>
                 <p className="text-gray-700">{item.venue}</p>
                 {item.link && (

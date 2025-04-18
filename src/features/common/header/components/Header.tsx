@@ -29,7 +29,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-white shadow-md">
       <div className="py-4 px-3 md:px-16">
         <div className="flex items-center justify-between">
-          {/* Left: Logo and Title */}
+          {/* Logo and Title */}
           <Link href="/" className="flex items-center space-x-3 group">
             <Image
               src="/logo.png"
@@ -38,9 +38,12 @@ export default function Header() {
               height={100}
               className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <h1 className="text-lg font-bold tracking-widest lg:text-xl">
-              {t("labName")}
-            </h1>
+            <div className="flex-col">
+              <p className="text-xs">{t("universityName")}</p>
+              <h1 className="text-lg font-bold tracking-widest lg:text-xl">
+                {t("labName")}
+              </h1>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
